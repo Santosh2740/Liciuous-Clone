@@ -344,6 +344,10 @@ appendSlideNews = (dated) => {
     main.innerHTML = "Add to cart";
     main.addEventListener("click", () => {
       alert("clicekd");
+      console.log(e.name);
+      localStorage.setItem("data1", JSON.stringify(e.name))
+      window.location.href="./silly-authority-4051-Fw18_0291-Day-5/Product_pages.html"
+
     });
 
     let add = document.createElement("button");

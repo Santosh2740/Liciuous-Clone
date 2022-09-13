@@ -1,5 +1,6 @@
 let navbar = () => {
-  return `<a id="logo" href="#"><img id="licious_logo" src="https://www.licious.in/img/rebranding/licious-logo.svg" alt="licious"></a>
+  return `
+  <a id="logo" href=".././index.html"><img id="licious_logo" src="https://www.licious.in/img/rebranding/licious-logo.svg" alt="licious"></a>
     
     <div id="#">
     

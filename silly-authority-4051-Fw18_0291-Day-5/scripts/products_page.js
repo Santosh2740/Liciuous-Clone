@@ -1,10 +1,24 @@
+let backData = JSON.parse(localStorage.getItem("data1"));
+console.log(backData);
 
+let api;
+if (backData == "Chicken Curry Cut (Small Pcs) - Large Pack") {
+  api = "tempo";
+} else if (backData == "Chicken Curry Cut (Large Pcs) - Large Pack") {
+  api = "tempo1";
+} else if (backData == "Chicken Soup Bones - (Classic)") {
+  api = "tempo2";
+} else if (backData == "Afghani Murgh Seekh Kebab | Ready in 8 Minutes") {
+  api = "tempo3";
+}
+// console.log(api);
 
 let getdata = async () => {
-  let res = await fetch("http://localhost:3000/api/tempo");
+  let res = await fetch(`http://localhost:3000/api/${api}`);
   let data = await res.json();
   //   console.log(data);
   appenvalue(data);
+  appendvalue2(data);
   // floatCartData(data);
   localStorage.setItem("tempo", JSON.stringify(data));
   // getdatsasa(data);
@@ -126,11 +140,13 @@ appenvalue = (value) => {
       // console.log(center.innerHTML)
       sum2 = val.price;
       totalPrice = substaract * sum2;
-      let LOgoOfprice = "₹"
+      let LOgoOfprice = "₹";
       // console.log(sum2)
       console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
-      document.getElementById("totalpriceShow").append(`${LOgoOfprice}${totalPrice}`);
+      document
+        .getElementById("totalpriceShow")
+        .append(`${LOgoOfprice}${totalPrice}`);
       if (center.innerHTML < 1) {
         substruct.style.display = "none";
       } else if (center.innerHTML == -1 && center.innerHTML == 0) {
@@ -212,8 +228,6 @@ let getSlideData = async () => {
 };
 getSlideData();
 
-
-
 appendSlideNews = (dated) => {
   let sum = 0;
   let totalsum;
@@ -292,9 +306,9 @@ appendSlideNews = (dated) => {
         totalsum += e.price;
         main.innerHTML = 0;
         CartAllDetials.push(e);
-        
+
         localStorage.setItem("CartDetails", JSON.stringify(CartAllDetials));
-        
+
         add.style.display = "inline-block";
         minus.style.display = "inline-block";
       }
@@ -508,51 +522,48 @@ function showSlides() {
 
 // <!---------------------------DATA APPEND FOR CART PAGE---------------------------------------------------------------------------!>
 
-let CartDetials = JSON.parse(localStorage.getItem("CartDetails"));
-console.log(CartDetials);
+appendvalue2 = (value) => {
+  value.forEach((eleme) => {
+    let stickeyImageCart = document.createElement("img");
+    stickeyImageCart.src = eleme.imgUrl;
 
-let stickeyImageCart = document.createElement("img");
-stickeyImageCart.src = CartDetials[0].imgUrl;
+    let stickeyPriceCart = document.createElement("p");
+    stickeyPriceCart.innerHTML = eleme.name;
 
-let stickeyPriceCart = document.createElement("p");
-stickeyPriceCart.innerHTML = CartDetials[0].name;
+    let stickeyMrpCart = document.createElement("p");
+    stickeyMrpCart.innerHTML = "MRP:";
+    let stickeyNmaecart = document.createElement("h1");
+    stickeyNmaecart.innerHTML = "₹" + eleme.price;
 
-let stickeyMrpCart = document.createElement("p");
-stickeyMrpCart.innerHTML = "MRP:";
-let stickeyNmaecart = document.createElement("h1");
-stickeyNmaecart.innerHTML = "₹" + CartDetials[0].price;
+    let stickeybuttonCart = document.createElement("button");
+    stickeybuttonCart.innerHTML = "Offer!!";
 
-let stickeybuttonCart = document.createElement("button");
-stickeybuttonCart.innerHTML = "Go To Cart";
+    stickeybuttonCart.addEventListener("click", () => {
+      // alert("click");
+      // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
+    });
 
-stickeybuttonCart.addEventListener("click", () => {
-  // alert("click");
-  // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
-});
+    let stickeybikeLogo = document.createElement("img");
+    stickeybikeLogo.src = eleme.bikelogo;
 
-let stickeybikeLogo = document.createElement("img");
-stickeybikeLogo.src = CartDetials[0].bikelogo;
+    let stickeybikecont = document.createElement("p");
+    stickeybikecont.innerHTML = eleme.bikeContnt;
 
-let stickeybikecont = document.createElement("p");
-stickeybikecont.innerHTML = CartDetials[0].bikeContnt;
+    let stickeydiv1 = document.createElement("div");
+    stickeydiv1.setAttribute("id", "stickeyCar1");
+    let sticketydiv2 = document.createElement("div");
+    sticketydiv2.setAttribute("id", "stickeyCart2");
 
-let stickeydiv1 = document.createElement("div");
-stickeydiv1.setAttribute("id", "stickeyCar1");
-let sticketydiv2 = document.createElement("div");
-sticketydiv2.setAttribute("id", "stickeyCart2");
+    stickeydiv1.append(
+      stickeyImageCart,
+      stickeyPriceCart,
+      stickeyMrpCart,
+      stickeyNmaecart,
+      stickeybuttonCart
+    );
 
-stickeydiv1.append(
-  stickeyImageCart,
-  stickeyPriceCart,
-  stickeyMrpCart,
-  stickeyNmaecart,
-  stickeybuttonCart
-);
+    sticketydiv2.append(stickeybikeLogo, stickeybikecont);
 
-sticketydiv2.append(stickeybikeLogo, stickeybikecont);
-
-document.getElementById("FloatCart_page").append(stickeydiv1, sticketydiv2);
-
-
-
-
+    document.getElementById("FloatCart_page").append(stickeydiv1, sticketydiv2);
+  });
+};
