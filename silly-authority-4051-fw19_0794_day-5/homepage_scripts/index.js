@@ -77,13 +77,16 @@ home2arr.forEach((element) => {
     if (element.title == "Today's Deal") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Chicken") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Fish & Seafood") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Mutton") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Ready to Cook") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Prawns") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Cold Cuts") {
@@ -93,11 +96,13 @@ home2arr.forEach((element) => {
     } else if (element.title == "Eggs") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/egg.html";
     } else if (element.title == "Biryani & Kebab") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Combos") {
       window.location.href = "";
     } else if (element.title == "Featured Collections") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     }
   };
 
@@ -188,13 +193,16 @@ home6arr.forEach((element) => {
     if (element.title == "Today's Deal") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Chicken") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Fish & Seafood") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Mutton") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Ready to Cook") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Prawns") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Cold Cuts") {
@@ -204,11 +212,13 @@ home6arr.forEach((element) => {
     } else if (element.title == "Eggs") {
       window.location.href = "./silly-authority-4051-fw18_1115_day-5/egg.html";
     } else if (element.title == "Biryani & Kebab") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Combos") {
       window.location.href = "";
     } else if (element.title == "Featured Collections") {
-      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
+      window.location.href =
+        "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     }
   };
 
@@ -345,9 +355,9 @@ appendSlideNews = (dated) => {
     main.addEventListener("click", () => {
       // alert("clicekd");
       console.log(e.name);
-      localStorage.setItem("data1", JSON.stringify(e.name))
-      window.location.href="./silly-authority-4051-Fw18_0291-Day-5/Product_pages.html"
-
+      localStorage.setItem("data1", JSON.stringify(e.name));
+      window.location.href =
+        "./silly-authority-4051-Fw18_0291-Day-5/Product_pages.html";
     });
 
     let add = document.createElement("button");
