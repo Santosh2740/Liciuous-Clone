@@ -56,7 +56,7 @@ let footerTal =()=>{
      </div>
      <h5>POPULAR SEARCHES</h5>
      <hr>
-     <div>
+     <div id="middleCont">
         <h4>We will sell only the meat that we would eat ourselves.</h4>
         <p>At Licious, we’re big meat-lovers. And by big, we mean huge. So when it comes to the meat we put on your plate, we’re extremely picky. Every single product is handpicked by a team with years of experience.</p>
         <h4>If it’s not fresh, we won’t sell it</h4>

@@ -1,15 +1,107 @@
-let backData = JSON.parse(localStorage.getItem("data1"));
-console.log(backData);
+let backDat = JSON.parse(localStorage.getItem("data1"));
+console.log(backDat);
 
 let api;
-if (backData == "Chicken Curry Cut (Small Pcs) - Large Pack") {
+if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
   api = "tempo";
-} else if (backData == "Chicken Curry Cut (Large Pcs) - Large Pack") {
+  let imagesoftheSlideShow = [
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_display_image/1631077710.8126--2021-09-0810:38:30--1818",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1631077714.4492--2021-09-0810:38:34--1818",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
+  ];
+  let index = 0;
+  let addressoftheimage;
+  let slideshowofdetailsofiamge = () => {
+    let conatiner = document.getElementById("slideShow");
+    addressoftheimage = setInterval(() => {
+      if (index === imagesoftheSlideShow.length) {
+        index = 0;
+      }
+      conatiner.innerHTML = null;
+      let image = document.createElement("img");
+      image.src = imagesoftheSlideShow[index];
+      image.setAttribute("class", "slideshowaimge");
+      conatiner.append(image);
+
+      index++;
+    }, 4000);
+  };
+  slideshowofdetailsofiamge();
+} else if (backDat == "Chicken Curry Cut (Large Pcs) - Large Pack") {
   api = "tempo1";
-} else if (backData == "Chicken Soup Bones - (Classic)") {
+  let imagesoftheSlideShow = [
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_avakgtb7ywh/2/prod_display_image/1631077382.6688--2021-09-0810:33:02--1818",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1631077714.4492--2021-09-0810:38:34--1818",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
+  ];
+  let index = 0;
+  let addressoftheimage;
+  let slideshowofdetailsofiamge = () => {
+    let conatiner = document.getElementById("slideShow");
+    addressoftheimage = setInterval(() => {
+      if (index === imagesoftheSlideShow.length) {
+        index = 0;
+      }
+      conatiner.innerHTML = null;
+      let image = document.createElement("img");
+      image.src = imagesoftheSlideShow[index];
+      image.setAttribute("class", "slideshowaimge");
+      conatiner.append(image);
+
+      index++;
+    }, 4000);
+  };
+  slideshowofdetailsofiamge();
+} else if (backDat == "Chicken Soup Bones - (Classic)") {
   api = "tempo2";
-} else if (backData == "Afghani Murgh Seekh Kebab | Ready in 8 Minutes") {
+  let imagesoftheSlideShow = [
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
+  ];
+  let index = 0;
+  let addressoftheimage;
+  let slideshowofdetailsofiamge = () => {
+    let conatiner = document.getElementById("slideShow");
+    addressoftheimage = setInterval(() => {
+      if (index === imagesoftheSlideShow.length) {
+        index = 0;
+      }
+      conatiner.innerHTML = null;
+      let image = document.createElement("img");
+      image.src = imagesoftheSlideShow[index];
+      image.setAttribute("class", "slideshowaimge");
+      conatiner.append(image);
+
+      index++;
+    }, 4000);
+  };
+  slideshowofdetailsofiamge();
+} else if (backDat == "Afghani Murgh Seekh Kebab | Ready in 8 Minutes") {
   api = "tempo3";
+  let imagesoftheSlideShow = [
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
+  ];
+  let index = 0;
+  let addressoftheimage;
+  let slideshowofdetailsofiamge = () => {
+    let conatiner = document.getElementById("slideShow");
+    addressoftheimage = setInterval(() => {
+      if (index === imagesoftheSlideShow.length) {
+        index = 0;
+      }
+      conatiner.innerHTML = null;
+      let image = document.createElement("img");
+      image.src = imagesoftheSlideShow[index];
+      image.setAttribute("class", "slideshowaimge");
+      conatiner.append(image);
+
+      index++;
+    }, 4000);
+  };
+  slideshowofdetailsofiamge();
 }
 // console.log(api);
 
@@ -18,14 +110,59 @@ let getdata = async () => {
   let data = await res.json();
   //   console.log(data);
   appenvalue(data);
-  appendvalue2(data);
-  // floatCartData(data);
+  appendva(data);
   localStorage.setItem("tempo", JSON.stringify(data));
-  // getdatsasa(data);
+  
 };
 getdata();
 
 let CartAllDetials = JSON.parse(localStorage.getItem("CartDetails")) || [];
+
+appendva = (value) => {
+  value.forEach((eleme) => {
+    let stickeyImageCart = document.createElement("img");
+    stickeyImageCart.src = eleme.imgUrl;
+
+    let stickeyPriceCart = document.createElement("p");
+    stickeyPriceCart.innerHTML = eleme.name;
+
+    let stickeyMrpCart = document.createElement("p");
+    stickeyMrpCart.innerHTML = "MRP:";
+    let stickeyNmaecart = document.createElement("h1");
+    stickeyNmaecart.innerHTML = "₹" + eleme.price;
+
+    let stickeybuttonCart = document.createElement("button");
+    stickeybuttonCart.innerHTML = "Offer!!";
+
+    stickeybuttonCart.addEventListener("click", () => {
+      // alert("click");
+      // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
+    });
+
+    let stickeybikeLogo = document.createElement("img");
+    stickeybikeLogo.src = eleme.bikelogo;
+
+    let stickeybikecont = document.createElement("p");
+    stickeybikecont.innerHTML = eleme.bikeContnt;
+
+    let stickeydiv1 = document.createElement("div");
+    stickeydiv1.setAttribute("id", "stickeyCar1");
+    let sticketydiv2 = document.createElement("div");
+    sticketydiv2.setAttribute("id", "stickeyCart2");
+
+    stickeydiv1.append(
+      stickeyImageCart,
+      stickeyPriceCart,
+      stickeyMrpCart,
+      stickeyNmaecart,
+      stickeybuttonCart
+    );
+
+    sticketydiv2.append(stickeybikeLogo, stickeybikecont);
+
+    document.getElementById("FloatCart_page").append(stickeydiv1, sticketydiv2);
+  });
+};
 
 appenvalue = (value) => {
   let sum2 = 0;
@@ -181,11 +318,11 @@ appenvalue = (value) => {
     let div9 = document.createElement("div");
 
     let span1 = document.createElement("span");
-    span1.setAttribute("class", "SlideShowdot");
+    // span1.setAttribute("class", "SlideShowdot");
     let span2 = document.createElement("span");
     span2.setAttribute("class", "SlideShowdot");
     let span3 = document.createElement("span");
-    span3.setAttribute("class", "SlideShowdot");
+    // span3.setAttribute("class", "SlideShowdot");
 
     div7.append(bikelogo, bikeContnt);
 
@@ -206,7 +343,7 @@ appenvalue = (value) => {
 
   function showSlides() {
     let i;
-    let dots = document.getElementsByClassName("SlideShowdot");
+    let dots = document.getElementsByClassName("SlitydeShowdot");
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
@@ -503,8 +640,8 @@ showSlides();
 
 function showSlides() {
   let i;
-  let slides = document.getElementsByClassName("mySlidespages");
-  let dots = document.getElementsByClassName("SlideShowdot");
+  // let slides = document.getElementsByClassName("mySlidespages");
+  // let dots = document.getElementsByClassName("SlideShowdot");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
@@ -522,48 +659,4 @@ function showSlides() {
 
 // <!---------------------------DATA APPEND FOR CART PAGE---------------------------------------------------------------------------!>
 
-appendvalue2 = (value) => {
-  value.forEach((eleme) => {
-    let stickeyImageCart = document.createElement("img");
-    stickeyImageCart.src = eleme.imgUrl;
-
-    let stickeyPriceCart = document.createElement("p");
-    stickeyPriceCart.innerHTML = eleme.name;
-
-    let stickeyMrpCart = document.createElement("p");
-    stickeyMrpCart.innerHTML = "MRP:";
-    let stickeyNmaecart = document.createElement("h1");
-    stickeyNmaecart.innerHTML = "₹" + eleme.price;
-
-    let stickeybuttonCart = document.createElement("button");
-    stickeybuttonCart.innerHTML = "Offer!!";
-
-    stickeybuttonCart.addEventListener("click", () => {
-      // alert("click");
-      // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
-    });
-
-    let stickeybikeLogo = document.createElement("img");
-    stickeybikeLogo.src = eleme.bikelogo;
-
-    let stickeybikecont = document.createElement("p");
-    stickeybikecont.innerHTML = eleme.bikeContnt;
-
-    let stickeydiv1 = document.createElement("div");
-    stickeydiv1.setAttribute("id", "stickeyCar1");
-    let sticketydiv2 = document.createElement("div");
-    sticketydiv2.setAttribute("id", "stickeyCart2");
-
-    stickeydiv1.append(
-      stickeyImageCart,
-      stickeyPriceCart,
-      stickeyMrpCart,
-      stickeyNmaecart,
-      stickeybuttonCart
-    );
-
-    sticketydiv2.append(stickeybikeLogo, stickeybikecont);
-
-    document.getElementById("FloatCart_page").append(stickeydiv1, sticketydiv2);
-  });
-};
+// ----------------------------------------SLIDE---SHOW-------------------------------------------------------------

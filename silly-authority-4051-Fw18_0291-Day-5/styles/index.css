@@ -440,7 +440,7 @@ body {
   margin: 0 auto;
 }
 #div1_video {
-  margin-top: -213.5%;
+  margin-top: -202.5%;
   margin-left: 50%;
 }
 #headerVideoLink {
@@ -557,10 +557,17 @@ body {
   display: inline-block;
   transition: background-color 0.6s ease;
   margin-top: 10%;
+  /* position: absolute; */
 }
 
 .active {
   background-color: #717171;
+}
+
+.slideshowaimge {
+  height: 330px;
+  width: 500px;
+  margin-left: 25px;
 }
 
 /* //-------------------------------------------------------------------------------------------------- */
@@ -665,8 +672,6 @@ body {
   margin-left: 20%;
 }
 
-
-
 /* ======================================================================================================================================= */
 /* button stylr */
 
@@ -723,6 +728,3 @@ body {
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
   color: #e41d36;
 } */
-
-
-

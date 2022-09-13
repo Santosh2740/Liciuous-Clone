@@ -1,5 +1,5 @@
-let footerTal =()=>{
-    return `<div id="rao1">
+let footerTal = () => {
+  return `<div id="rao1">
     <img src="https://www.licious.in/img/default/licious-logo.svg" alt="">
      <div id="rao2">
         <div id="rao10">
@@ -54,9 +54,9 @@ let footerTal =()=>{
         <h4>CITIES WE SERVE</h4>
         <P>Bengaluru | NCR | Hyderabad | Chandigarh | Panchkula | Mohali | Mumbai | Pune | Chennai | Coimbatore | Jaipur | Cochin | Vijayawada | Vishakhapatnam | Pocdichery | Kolkata | Trichy</P>
      </div>
-     <h5>POPULAR SEARCHES</h5>
+     <h5 class="headi1">POPULAR SEARCHES</h5>
      <hr>
-     <div>
+     <div id="middleCont">
         <h4>We will sell only the meat that we would eat ourselves.</h4>
         <p>At Licious, we’re big meat-lovers. And by big, we mean huge. So when it comes to the meat we put on your plate, we’re extremely picky. Every single product is handpicked by a team with years of experience.</p>
         <h4>If it’s not fresh, we won’t sell it</h4>
@@ -69,9 +69,9 @@ let footerTal =()=>{
          
         <b> &copy 2022 Delightful Gourmet Pvt Ltd. All Rights Reserved.</b>
      </div>
-     <p>Licious is your one-stop fesh meat delivery shop. In here, you get nothing but the freshest meat & seafood, delivered straight to your doorstep. Now you can buy meat online anytime at your convenience. Indulge in our diverse selection: Chicken, Mutton, Seafood (Fish, Prawns, Crabs), Marinades & Cold Cuts. All our products are completely natural and healthy. Once you've experienced Licious, you'll never go back to the old way of buying meat and seafood.</p>
+     <p id="lastpara">Licious is your one-stop fesh meat delivery shop. In here, you get nothing but the freshest meat & seafood, delivered straight to your doorstep. Now you can buy meat online anytime at your convenience. Indulge in our diverse selection: Chicken, Mutton, Seafood (Fish, Prawns, Crabs), Marinades & Cold Cuts. All our products are completely natural and healthy. Once you've experienced Licious, you'll never go back to the old way of buying meat and seafood.</p>
 
 </div>`;
-}
+};
 
 export default footerTal;

@@ -1,69 +1,90 @@
-.big{
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    line-height: 20px;
+.big {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  /* line-height: 50px; */
 }
-#rao1{
-    width: 80%;
-    height: 1200px;
-    /* border: 1px solid black; */
-    
+#rao1 {
+  width: 95%;
+  margin-left: 3%;
+  /* height: 1200px; */
+  /* border: 1px solid red; */
 }
-#rao1>img{
-    width: 120px;
-    height: 46px;
-    padding-left: 6px;
+#middleCont h4 {
+  /* border: 2px solid red; */
+  line-height: 30px;
+  margin-top: 20px;
+  /* margin-bottom: 10px; */
 }
-#rao2{
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    line-height: 14px;
-    justify-content: space-between;
-    
+#lastpara {
+  margin-top: 20px;
+  line-height: 26px;
+  margin-bottom: 30px;
 }
-#rao3>img{
-    width: 120px;
-    padding-top: 12px;
-    margin-top: -15%;
+.headi1{
+    margin-top: 20px;
+    font-weight: bold;
 }
-#rao4{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+#rao1 > img {
+  width: 120px;
+  height: 46px;
+  padding-left: 6px;
+  /* border: 1px solid black; */
 }
-#rao5>p{
-    display: flex;
-    word-spacing: 1rem;
-    line-height: 32px;
-    letter-spacing: 1.px;
-}
-#rao8{
-    display: flex;
-    justify-content: center;
-}
-#rao9{
-    left: 10%;
-    margin-right: -5px;
+#rao2 {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  line-height: 30px;
+  justify-content: space-between;
 
+  /* border: 1px solid red; */
 }
-#rao10{
-    left:10%;
-    margin-right: -90px;
+#rao3 > img {
+  width: 120px;
+  padding-top: 12px;
+  margin-top: -15%;
 }
-#rao11{
-    margin-right: -50px;
+#rao4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
-#rao12{
-    margin-right: -125px;
-    margin-top: -2%;
+#rao5 > p {
+  display: flex;
+  word-spacing: 1rem;
+  line-height: 32px;
+  letter-spacing: 1px;
 }
-#rao9>h4{
-    font-size: 15.48px;
+#rao8 {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
-.expe{
-    cursor: pointer;
+#rao8 >b{
+    margin-top: 20px;
+}
+#rao9 {
+  left: 10%;
+  margin-right: -5px;
+}
+#rao10 {
+  left: 10%;
+  margin-right: -90px;
+}
+#rao11 {
+  margin-right: -50px;
+}
+#rao12 {
+  margin-right: -125px;
+  margin-top: -2%;
+}
+#rao9 > h4 {
+  font-size: 15.48px;
+  padding: 5px;
+}
+.expe {
+  cursor: pointer;
 }
