@@ -1,6 +1,6 @@
 
-import navbar from "../../../silly-authority-4051/Debasis/component/navbar.js";
-
+import navbar from "../../Components/navbar.js";
+// console.log(navbar());
 document.getElementById("navbar").innerHTML = navbar();
 
   
@@ -18,10 +18,10 @@ let searchquery=document.querySelector("#search_bar")
        query.toLowerCase()
        let res = await fetch(`http://localhost:3000/api/${query}`);
        let data = await res.json();
-       
+       console.log(data);
        localStorage.setItem("searchresult",JSON.stringify(data))
        console.log(query)
-       window.location.href="../../silly-authority-4051-fw19_0794_day-5/abhinav/searchdata.html"
+    //    window.location.href=".././searchdata.html"
    }
 
 
@@ -74,5 +74,5 @@ let searchquery=document.querySelector("#search_bar")
        searchcontainer.append(bigbox)
    //   div.append(image, name, price, rating);
 
-   //   box.append(div);
+    //  box.append(div);
    });

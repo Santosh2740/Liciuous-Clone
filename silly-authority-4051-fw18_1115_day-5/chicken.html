@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicken</title>
+    <link rel="stylesheet" href="../styles/chicken.css" />
+    <script
+      src="https://kit.fontawesome.com/afc5c86662.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="../silly-authority-4051-fp03_158-Day-5/css/nav.css">
+    <link rel="stylesheet" href="../silly-authority-4051/Styles/footer.css" />
+    <link rel="shortcut icon" href="https://www.licious.in/favicon_old.ico" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+</div>
+<div id="vishwa_sorting_div">
+  <button
+    id="vishwa_sort_by_name_button"
+    onclick="vishwa_sort_by_name_button()"
+  >
+    Sort by name
+  </button>
+  <button
+    id="vishwa_sort_by_price_button"
+    onclick="vishwa_sort_by_price_button()"
+  >
+    Sort by price
+  </button>
+  <button
+    id="vishwa_sort_by_weight_button"
+    onclick="vishwa_sort_by_weight_button()"
+  >
+    Sort by weight
+  </button>
+</div>
+    <div class="refermain">
+      <p id="refhome"><a href="" class="atultoday">Home&nbsp;</a></p>
+      <p><i class="fa-solid fa-caret-right"></i></p>
+      <p id="chickenHead">&nbsp;Chicken</p>
+    </div>
+    <div class="head">
+      <h2>Chicken</h2>
+    </div>
+    <div class="bar"><hr /></div>
+    <!-- ------------------ -->
+    <div id="container"></div>
+    <div id="footer"></div>
+  </body>
+</html>
+<script>
+  let getData = async () => {
+    let res = await fetch("http://localhost:3000/api/Chicken_Data");
+    let data = await res.json();
+    _chicekn(data)
+    vishwa_append(data)
+  };
+  getData();
+  function _chicekn(chikendata){
+  chikendata.map(function (e, index, array) {
+    var main = document.createElement("div");
+    main.setAttribute("class", "main");
+    var img = document.createElement("img");
+    img.setAttribute("src", e.imgUrl);
+    img.setAttribute("class", "image");
+
+    var name = document.createElement("h4");
+    name.innerText = e.name;
+    var des = document.createElement("p");
+    des.setAttribute("class", "des");
+    des.innerText = e.des;
+    var wgt = document.createElement("div");
+    wgt.setAttribute("class", "wgt");
+    var net_tag = document.createElement("h6");
+    net_tag.innerText = e.net_tag;
+
+    var net = document.createElement("h6");
+    net.innerText = e.net;
+    var n_gm = document.createElement("h6");
+    n_gm.innerText = e.unit;
+
+    var gross_tag = document.createElement("h6");
+    gross_tag.innerText = e.gross_tag;
+    var gross = document.createElement("h6");
+    gross.innerText = e.gross;
+    var g_gm = document.createElement("h6");
+    g_gm.innerText = e.unit;
+
+    var hold = document.createElement("div");
+    hold.setAttribute("class", "hold");
+
+    var pri = document.createElement("div");
+    pri.setAttribute("class", "pri");
+    var price_tag = document.createElement("h5");
+    price_tag.innerText = e.price_tag;
+    var cuurency = document.createElement("h5");
+    cuurency.innerText = e.cuurency;
+    var price = document.createElement("h5");
+    price.innerText = e.price;
+    var strikePrice = document.createElement("strike");
+    strikePrice.innerText = e.strikePrice;
+
+    var btndiv = document.createElement("div");
+    btndiv.setAttribute("class", "btndiv");
+    var addCart = document.createElement("button");
+    addCart.setAttribute("class", "addcartbtn");
+    addCart.innerHTML = "Add to Cart";
+    addCart.addEventListener("click", function () {
+      addToCart(e);
+    });
+    wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);
+    pri.append(price_tag, cuurency, price, strikePrice, addCart);
+    // btndiv.append(addCart)
+
+    main.append(img, name, des, wgt, pri);
+    document.querySelector("#container").append(main);
+  });
+}
+
+
+function vishwa_sort_by_price_button() {
+  data = data.sort(function (a, b) {
+    return a.price - b.price;
+  });
+  vishwa_append(data);
+  // console.log(data)
+}
+
+function vishwa_sort_by_weight_button() {
+  data = data.sort(function (a, b) {
+    return a.net - b.net;
+  });
+  vishwa_append(data);
+  // console.log(length)
+  console.log(data);
+}
+
+function vishwa_sort_by_name_button() {
+  {
+    data = data.sort(function (a, b) {
+      let c = a.name.toUpperCase();
+      let cc = b.name.toUpperCase();
+      if (c < cc) {
+        return -1;
+      }
+      if (c > cc) {
+        return 1;
+      }
+      // return 0;
+    });
+  }
+  vishwa_append(data);
+}
+
+</script>
+<script src="./component/viswa_nav.js" type="module"></script>

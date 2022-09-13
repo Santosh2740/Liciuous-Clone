@@ -24,7 +24,7 @@ if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
       conatiner.append(image);
 
       index++;
-    }, 4000);
+    }, 2000);
   };
   slideshowofdetailsofiamge();
 } else if (backDat == "Chicken Curry Cut (Large Pcs) - Large Pack") {
@@ -298,7 +298,7 @@ appenvalue = (value) => {
       // console.log(sum2)
       console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
-      document.getElementById("totalpriceShow").append(totalPrice);
+      document.getElementById("totalpriceShow").append(`₹${totalPrice}`);
       if (center.innerHTML == 6) {
         jor.style.display = "none";
       } else if (center.innerHTML == -1 && center.innerHTML == 0) {
@@ -457,7 +457,7 @@ appendSlideNews = (dated) => {
       // console.log(sum2)
       console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
-      document.getElementById("totalpriceShow").append(totalPrice);
+      document.getElementById("totalpriceShow").append(`${totalPrice}`);
       if (main.innerHTML < 1) {
         minus.style.display = "none";
         main.innerHTML == "Add to cart";
@@ -474,7 +474,7 @@ appendSlideNews = (dated) => {
       // console.log(sum2)
       console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
-      document.getElementById("totalpriceShow").append(totalPrice);
+      document.getElementById("totalpriceShow").append(`₹${totalPrice}`);
       if (main.innerHTML == 6) {
         add.style.display = "none";
       } else if (main.innerHTML == -1 && main.innerHTML == 0) {

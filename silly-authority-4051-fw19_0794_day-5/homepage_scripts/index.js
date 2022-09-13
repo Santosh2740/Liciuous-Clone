@@ -69,35 +69,35 @@ home2arr.forEach((element) => {
   // image.setAttribute("src",element.img)
   image.src = element.img;
   div.addEventListener("click", () => {
-    alert("clicled");
+    // alert("clicled");
     onhome2();
   });
 
   let onhome2 = () => {
     if (element.title == "Today's Deal") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Chicken") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Fish & Seafood") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Mutton") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Ready to Cook") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Prawns") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Cold Cuts") {
       window.location.href = "";
     } else if (element.title == "Spreads") {
       window.location.href = "";
     } else if (element.title == "Eggs") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/egg.html";
     } else if (element.title == "Biryani & Kebab") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Combos") {
       window.location.href = "";
     } else if (element.title == "Featured Collections") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     }
   };
 
@@ -180,35 +180,35 @@ home6arr.forEach((element) => {
   console.log(element.title);
 
   div.addEventListener("click", () => {
-    alert("clicled");
+    // alert("clicled");
     onhome2();
   });
 
   let onhome2 = () => {
     if (element.title == "Today's Deal") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Chicken") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Fish & Seafood") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Mutton") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Ready to Cook") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/mutton.html";
     } else if (element.title == "Prawns") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/fish.html";
     } else if (element.title == "Cold Cuts") {
       window.location.href = "";
     } else if (element.title == "Spreads") {
       window.location.href = "";
     } else if (element.title == "Eggs") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/egg.html";
     } else if (element.title == "Biryani & Kebab") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     } else if (element.title == "Combos") {
       window.location.href = "";
     } else if (element.title == "Featured Collections") {
-      window.location.href = "";
+      window.location.href = "./silly-authority-4051-fw18_1115_day-5/chicken.html";
     }
   };
 
