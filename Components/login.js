@@ -39,6 +39,7 @@ let searchquery = document.querySelector("#OneTimePassword");
 searchquery.addEventListener("keypress", () => {
   if (event.key == "Enter") {
     getMobileNo();
+    // alert("gives")
   }
 });
 
@@ -46,19 +47,18 @@ let getMobileNo = () => {
   let query = document.querySelector("#OneTimePassword").value;
   console.log(query);
   if (query == "123456") {
-        alert("Sucessfully log in ");
-        window.location.reload(); 
-        // document.querySelector("#logintext").innerHTML="Profile"
-        document.getElementById("confirmLogin").addEventListener("click", function(e) {
-          alert("sucessfully logges in")
-          // window.location.href = "../index.html"
-          window.location.reload();
-        })
-       
-      } else {
-        alert("Please!! Enter a Valid Mobile 📱 Number");
-      }
-  
+    alert("Sucessfully log in ");
+    window.location.reload();
+    localStorage.setItem("loginState", JSON.stringify(true));
+    // document.querySelector("#logintext").innerHTML="Profile"
+    document.getElementById("confirmLogin").addEventListener("click", () => {
+      alert("sucessfully logges in");
+      window.location.href = "./index.html";
+      // window.location.reload();
+    });
+  } else {
+    alert("Please!! Enter a Valid Mobile 📱 Number");
+  }
 };
 
 let otpseachquery = document.querySelector("#MobleNoInput");
@@ -184,6 +184,15 @@ form.addEventListener("submit", function (event) {
   }
 });
 
-dd.onclick = function () {
-  window.location.href = "../silly-authority-4051/Pages/paymentPage.html";
-};
+let loginsatuebackprocess = localStorage.getItem("loginState");
+
+  dd.onclick = function () {
+    if(loginsatuebackprocess){
+      window.location.href = "./silly-authority-4051/Pages/paymentPage.html";
+    }
+    else{
+      alert("Please Login First")
+    }
+    
+  };
+

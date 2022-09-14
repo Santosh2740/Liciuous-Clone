@@ -20,7 +20,7 @@ let navbar = () => {
     
     
     <!-- search tag -->
-        <input  id="search_bar" type="text" placeholder="Search  For Any Delicious Product">
+        <input  id="search_bar" type="text" placeholder="Search &nbsp;&nbsp; fish , Mutton_Data , Chicken_Data , Dishes_of_chicken , bestSeller , egg">
     
     
     
@@ -99,7 +99,7 @@ let navbar = () => {
     </div>
     <div id="Price_rotate">
     <div id="MaybePriceadjust">
-    <button id="totalpriceShow" class="btn">0</button>
+    <button id="totalpriceShow" class="btn"></button>
     </div>
     </div>
     <div id="mainCartContantPagr">
@@ -125,7 +125,7 @@ let navbar = () => {
           </form>
           <div>To get 30% Off, use <span></span></div>
        </div>
-       <div id="dd">CHECKOUT</div>
+       <div id="dd"><button>CHECKOUT</button></div>
        
     </div>
  </div>
@@ -138,9 +138,10 @@ let navbar = () => {
         />
       
       </div>
-      <button id="proceedto_checkout">S U B M I  T</button>
+      
     </div>
   </div>
+
  
     
            </div> 
@@ -188,7 +189,7 @@ let navbar = () => {
             <hr id="line" />
           </div>
           <div id="ProcedeWithOTP">
-            <a href="#"><button id="confirmLogin">proceed Via OTP</button></a>
+            <a href="./index.html"><button id="confirmLogin">proceed Via OTP</button></a>
           </div>
           <p id="terms_conditions">
             By signing in you agree to our

@@ -13,7 +13,7 @@
   z-index: 2000;
   transition: 0.5s ease;
   box-shadow: rgb(0, 0, 0) 0px 30px 90px;
-  background-image: url(https://www.licious.in/img/rebranding/user-login.png);
+  background-image: url(https://www.licious.in/img/rebranding/user-login-new.jpg);
 }
 
 .DisplayTheactivness {
@@ -155,6 +155,8 @@
   border: 0;
   padding: 4px;
   font-weight: bolder;
+  background-color: transparent;
+  font-size: 16px;
 }
 #tag:hover {
   color: green;
@@ -176,12 +178,13 @@
   text-align: center;
   border: 0;
   margin-bottom: 20px;
-  border: 0.6px solid gray;
-  /* box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, */
-  /* rgba(0, 0, 0, 0.9) 0px 0px 0px 1px; */
+  border: 0.1px solid rgb(228, 226, 226);
+  box-shadow: rgba(255, 255, 255, 0.2);
+  
   /* border-radius: 5px; */
   outline: none;
-  border: none;
+  /* border: none; */
+
   /* margin-bottom: 50px; */
 }
 
@@ -335,6 +338,8 @@
   background-color: transparent;
   margin-top: -15px;
   margin-bottom: -75px;
+  font-weight: bolder;
+  font-size: 14px;
 }
 #CartPage {
   display: flex;
@@ -356,7 +361,10 @@
   margin-right: 100px;
   border: none;
   outline: none;
-  font-weight: bolder;
+  /* border-radius: 50%; */
+  /* padding: 2; */
+  font-weight: 1000;
+  font-size: 15px;
 }
 #CartImagedeatils {
   display: flex;

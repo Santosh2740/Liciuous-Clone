@@ -3,6 +3,9 @@ import navbar from "../../Components/navbar.js";
 // console.log(navbar());
 document.getElementById("navbar").innerHTML = navbar();
 
+import footerTal from "../../Components/footer.js";
+
+document.getElementById("footer").innerHTML = footerTal();
   
 let searchquery=document.querySelector("#search_bar")
    
@@ -21,7 +24,7 @@ let searchquery=document.querySelector("#search_bar")
        console.log(data);
        localStorage.setItem("searchresult",JSON.stringify(data))
        console.log(query)
-    //    window.location.href=".././searchdata.html"
+       window.location.href="./searchdata.html"
    }
 
 
@@ -29,50 +32,70 @@ let searchquery=document.querySelector("#search_bar")
 
    let data=JSON.parse(localStorage.getItem("searchresult"));
    console.log(data)
+   _eggdata(data)
 
+   function _eggdata(eggdata) {
+    eggdata.map(function (elem) {
+      var main = document.createElement("div");
+      main.setAttribute("class", "main");
+      var img = document.createElement("img");
+      img.setAttribute("src", elem.imgUrl);
+      img.setAttribute("class", "image");
 
-   // function appendsearchvalue(value) {
-   let searchcontainer = document.getElementById("searchcontainer");
-   searchcontainer.innerHTML = null;
-   data.forEach( (val) => {
-     
-     let name = document.createElement("p");
-     name.innerHTML = val.name;
-     name.setAttribute("id","searchtitle")
+      var name = document.createElement("h4");
+      name.innerText = elem.name;
+      var des = document.createElement("p");
+      des.setAttribute("class", "des");
+      des.innerText = elem.des;
+      var wgt = document.createElement("div");
+      wgt.setAttribute("class", "wgt");
+      var net_tag = document.createElement("h6");
+      net_tag.innerText = elem.net_tag;
 
-     let image = document.createElement("img");
-     image.src = val.imgUrl;
-     image.setAttribute("id","searchimage")
+      var net = document.createElement("h6");
+      net.innerText = elem.net;
+      var n_gm = document.createElement("h6");
+      n_gm.innerText = elem.unit;
 
-     let price = document.createElement("p");
-     price.innerHTML = "₹" + val.price;
-     price.setAttribute("id","searchprice")
+      var gross_tag = document.createElement("h6");
+      gross_tag.innerText = elem.gross_tag;
+      var gross = document.createElement("h6");
+      gross.innerText = elem.gross;
+      var g_gm = document.createElement("h6");
+      g_gm.innerText = elem.unit;
 
-       let but=document.createElement("button")
-       but.innerText="ADD TO CART"
-       but.setAttribute("id","searchbut")
+      var hold = document.createElement("div");
+      hold.setAttribute("class", "hold");
 
-       let box1=document.createElement("div")
-       box1.append(image)
-       box1.setAttribute("id","box1s")
+      var pri = document.createElement("div");
+      pri.setAttribute("class", "pri");
+      var price_tag = document.createElement("h5");
+      price_tag.innerText = elem.price_tag;
+      var currency = document.createElement("h5");
+      currency.innerText = elem.currency;
+      var price = document.createElement("h5");
+      price.innerText = elem.price;
+      var strikePrice = document.createElement("strike");
+      strikePrice.innerText = `₹${elem.strikePrice}`;
+      var btndiv = document.createElement("div");
+      btndiv.setAttribute("class", "btndiv");
+      var addCart = document.createElement("button");
+      addCart.setAttribute("class", "addcartbtn");
+      addCart.innerHTML = "Add to Cart";
 
-       let box2=document.createElement("div")
-       box2.append(name,price)
-       box2.setAttribute("id","box2s")
+      addCart.addEventListener("click", function () {
+        window.location.href ="../silly-authority-4051-Fw18_0291-Day-5/Product_pages.html";
+      });
 
-       let box3=document.createElement("div")
-       box3.append(but)
-       box3.setAttribute("id","box3s")
+      wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);
+      pri.append(price_tag, currency, price, strikePrice, addCart);
+      // btndiv.append(addCart)
 
-       let bigbox = document.createElement("div");
-       bigbox.setAttribute("id","bigboxs")
-
-       bigbox.append(box1,box2,box3)
-       bigbox.addEventListener("click",()=>{
-           window.location.href=""
-       })
-       searchcontainer.append(bigbox)
-   //   div.append(image, name, price, rating);
-
-    //  box.append(div);
-   });
+      main.append(img, name, des, wgt, pri);
+    //   document.getElementById(searchcontainer).append(main)
+    // main2.innerHTML = null;
+    // let main2 = searchcontainer;
+    
+    searchcontainer.append(main);
+    });
+  }
