@@ -55,7 +55,7 @@
 <script>
     let data;
   let getData = async () => {
-    let res = await fetch("https://safe-eyrie-39519.herokuapp.com/licious/Chicken_Data");
+    let res = await fetch("https://safe-eyrie-39519.herokuapp.com/licious/chicken");
     let data = await res.json();
     _chicekn(data)
   };

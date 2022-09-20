@@ -188,7 +188,7 @@ let loginsatuebackprocess = localStorage.getItem("loginState");
 
 dd.onclick = function () {
   if (loginsatuebackprocess) {
-    window.location.href = "./silly-authority-4051/Pages/paymentPage.html";
+    window.location.href = "./NavbarFooter/Pages/paymentPage.html";
   } else {
     alert("Please Login First");
   }

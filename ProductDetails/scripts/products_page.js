@@ -80,7 +80,7 @@ if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
 } else if (backDat == "Afghani Murgh Seekh Kebab | Ready in 8 Minutes") {
   api = "tempo3";
   let imagesoftheSlideShow = [
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
+    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_ikuk3ilucko/2/prod_display_image/1634458067.3282--2021-10-1713:37:47--905?format=webp",
     "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
     "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
   ];
