@@ -186,13 +186,10 @@ form.addEventListener("submit", function (event) {
 
 let loginsatuebackprocess = localStorage.getItem("loginState");
 
-  dd.onclick = function () {
-    if(loginsatuebackprocess){
-      window.location.href = "./silly-authority-4051/Pages/paymentPage.html";
-    }
-    else{
-      alert("Please Login First")
-    }
-    
-  };
-
+dd.onclick = function () {
+  if (loginsatuebackprocess) {
+    window.location.href = "./silly-authority-4051/Pages/paymentPage.html";
+  } else {
+    alert("Please Login First");
+  }
+};
