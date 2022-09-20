@@ -23,8 +23,56 @@ let pressing = async () => {
   let data = await res.json();
   console.log(data);
   localStorage.setItem("searchresult", JSON.stringify(data));
-  console.log(query);
+  // console.log(typeof(query));
+  let str = query;
+  let answer = str.charAt(0).toUpperCase() + str.substring(1);
+  localStorage.setItem("name", JSON.stringify(answer));
+  if (query == "fish" || "Fish") {
+    // alert("clicked");
+    let img1 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78e2de68f7";
+    let desc1 = "Select day’s catch";
+    let img2 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e7903958ce8";
+    let desc2 = "Fresh off coasts & farms";
+    localStorage.setItem("image1", JSON.stringify(img1));
+    localStorage.setItem("desc1", JSON.stringify(desc1));
+    localStorage.setItem("image2", JSON.stringify(img2));
+    localStorage.setItem("desc2", JSON.stringify(desc2));
+  }
+  if (query == "egg" || "Egg") {
+    let img1 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_591014f08301c";
+    let desc1 = "Naturally laid, not cultured";
+    let img2 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_5910153e779fb";
+    let desc2 = "Rich, full-bodied flavour";
+    localStorage.setItem("image1", JSON.stringify(img1));
+    localStorage.setItem("desc1", JSON.stringify(desc1));
+    localStorage.setItem("image2", JSON.stringify(img2));
+    localStorage.setItem("desc2", JSON.stringify(desc2));
+  }
+  if(query == "mutton"||"Mutton"){
+    let img1 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78c6b83b3c";
+    let desc1 = "Prime-grade Meats";
+    let img2 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78c97c079f";
+    let desc2 = "Sourcing";
+    localStorage.setItem("image1", JSON.stringify(img1));
+    localStorage.setItem("desc1", JSON.stringify(desc1));
+    localStorage.setItem("image2", JSON.stringify(img2));
+    localStorage.setItem("desc2", JSON.stringify(desc2));
+
+  }
+  if(query == "chicken" || "Chicken"){
+    let img1 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78b9c4b2e0";
+    let desc1 = "Farm-raised superior breed ";
+    let img2 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78bdf673b7";
+    let desc2 = "No Added Chemical , Antibiotic residue free.";
+    localStorage.setItem("image1", JSON.stringify(img1));
+    localStorage.setItem("desc1", JSON.stringify(desc1));
+    localStorage.setItem("image2", JSON.stringify(img2));
+    localStorage.setItem("desc2", JSON.stringify(desc2));
+
+  }
+
   window.location.href = "./searchdata.html";
+  _eggdata(data);
 };
 
 let data = JSON.parse(localStorage.getItem("searchresult"));
@@ -32,6 +80,8 @@ console.log(data);
 _eggdata(data);
 
 function _eggdata(eggdata) {
+  // let box = document.getElementById("searchconatiner");
+  // box.innerHTML= null;
   eggdata.map(function (elem) {
     var main = document.createElement("div");
     main.setAttribute("class", "main");
@@ -97,3 +147,27 @@ function _eggdata(eggdata) {
     searchcontainer.append(main);
   });
 }
+
+let dataname = JSON.parse(localStorage.getItem("name"));
+// console.log(dataname);
+
+document.getElementById("chickenHead2").innerText = dataname;
+document.getElementById("chickenHead3").innerText = dataname;
+
+let img1 = JSON.parse(localStorage.getItem("image1"));
+let img2 = JSON.parse(localStorage.getItem("image2"));
+let desc1 = JSON.parse(localStorage.getItem("desc1"));
+
+let backimg1 = document.createElement("img");
+backimg1.src = img1;
+backimg1.setAttribute("id","imaging")
+document.getElementById("imaging").append(backimg1);
+document.getElementById("desi1").innerText= desc1;
+
+let backimg2 = document.createElement("img");
+backimg2.src= img2;
+backimg2.setAttribute("id","imaging1")
+document.getElementById("imaging1").append(backimg2);
+
+
+

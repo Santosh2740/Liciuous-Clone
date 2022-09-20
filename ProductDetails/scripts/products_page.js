@@ -1,5 +1,6 @@
 let backDat = JSON.parse(localStorage.getItem("data1"));
 console.log(backDat);
+document.getElementById("chickenHead2").innerText = backDat;
 
 let api;
 if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
