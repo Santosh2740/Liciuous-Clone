@@ -263,11 +263,11 @@ appenvalue = (value) => {
     jor.innerText = "+";
 
     center.addEventListener("click", () => {
-      // alert("click");
       if (center.innerHTML == "Add to cart") {
         center.innerHTML = 0;
         CartAllDetials.push(val);
         localStorage.setItem("CartDetails", JSON.stringify(CartAllDetials));
+        // displayDate(cartLic);
         jor.style.display = "inline-block";
         substruct.style.display = "inline-block";
         // console.log(margeprice)
@@ -442,15 +442,17 @@ appendSlideNews = (dated) => {
 
     main.addEventListener("click", () => {
       // alert("click");
+
       if (main.innerHTML == "Add to cart") {
         totalsum += e.price;
         main.innerHTML = 0;
-        CartAllDetials.push(e);
-
-        localStorage.setItem("CartDetails", JSON.stringify(CartAllDetials));
-
+        // CartAllDetials.push(e);
+        //
+        // localStorage.setItem("CartDetails", JSON.stringify(CartAllDetials));
         add.style.display = "inline-block";
         minus.style.display = "inline-block";
+        // displayDate(cartLic);
+        addToCart(e);
       }
     });
     minus.addEventListener("click", () => {
@@ -510,6 +512,15 @@ appendSlideNews = (dated) => {
   console.log(totalsum);
 };
 
+function addToCart(e) {
+  e.quant = 1;
+  CartAllDetials.push(e);
+  localStorage.setItem("cardArr", JSON.stringify(CartAllDetials));
+  display(CartAllDetials);
+  subto();
+  addE();
+  console.log(CartAllDetials);
+}
 //<!-----------------------------Slide bar in home page----------------------------------------->
 
 let button = document.getElementById("next_home");

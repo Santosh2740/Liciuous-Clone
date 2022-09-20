@@ -1,7 +1,7 @@
 let home1 = document.querySelector("#home_1");
 let banner_img = document.createElement("img");
 banner_img.src =
-  "https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62c7158f31f30";
+  "https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62e142fbed5a8";
 home1.append(banner_img);
 home1.addEventListener("click", () => {
   banner();

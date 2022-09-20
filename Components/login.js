@@ -81,6 +81,7 @@ let getOtpNumbervaild = () => {
 
 // Cart-------------COMPLETED---------------------------itrm-------------------------
 
+
 var cartLic = JSON.parse(localStorage.getItem("CartDetails")) || [];
 
 var cont = document.querySelector("#lef");
@@ -184,6 +185,8 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+displayDate(cartLic);
+
 let loginsatuebackprocess = localStorage.getItem("loginState");
 
 dd.onclick = function () {
@@ -193,3 +196,7 @@ dd.onclick = function () {
     alert("Please Login First");
   }
 };
+
+displayDate(cartLic);
+// ---------------------------------------------------------------------------------------------------------------------------------------------------
+

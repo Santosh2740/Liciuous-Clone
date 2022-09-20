@@ -123,7 +123,7 @@ h6 {
 /* refer */
 .refermain {
   display: flex;
-  margin-left: 150px;
+  margin-left: 20px;
   font-weight: 900;
   font-size: 15px;
   padding: 18px;
@@ -141,7 +141,58 @@ a {
 }
 
 .head {
-  margin-left: 150px;
+  margin-left: 20px;
   width: 77%;
   padding: 20px;
+}
+.images{
+  display: flex;
+  margin-left: 12%;
+  margin-top: -4%;
+  margin-bottom:30px ;
+  gap: 20px;
+  position: relative;
+}
+.images > p >img{
+  width: 50px;
+
+}
+#nameimage{
+  margin-top: 1.4%;
+  border-right: 1px solid rgba(0,0,0,.5);
+  position: absolute;
+  margin-left: 5%;
+  color: rgba(0,0,0,.5);
+  font-weight: bold;
+  /* font-family: 'Source Sans Pro',sans-serif; */
+  
+  /* border-right: 1px solid black; */
+  /* margin: auto; */
+}
+
+.images1{
+  display: flex;
+  margin-left: 32%;
+  margin-top: -6%;
+  margin-bottom:30px ;
+  gap: 20px;
+  position: relative;
+}
+.images1 > p >img{
+  width: 50px;
+
+}
+#nameimage1{
+  color: rgba(0,0,0,.5);
+  font-family: 'Source Sans Pro',sans-serif;
+  margin-top: 1.8%;
+  /* border-right: 1px solid rgba(0,0,0,.5); */
+  position: absolute;
+  margin-left: 5.3%;
+  font-weight: bold;
+  /* border-right: 1px solid black; */
+  /* margin: auto; */
+}
+.bar{
+  margin-top: -2%;
 }

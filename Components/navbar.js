@@ -20,7 +20,7 @@ let navbar = () => {
     
     
     <!-- search tag -->
-        <input  id="search_bar" type="text" placeholder="Search &nbsp;&nbsp; fish , Mutton_Data , Chicken_Data , Dishes_of_chicken , bestSeller , egg">
+        <input  id="search_bar" type="text" placeholder="Search &nbsp;&nbsp; Fish , Mutton , Chicken , Egg , Dishes_of_chicken , bestSeller ">
     
     
     
@@ -103,6 +103,7 @@ let navbar = () => {
     </div>
     </div>
     <div id="mainCartContantPagr">
+    
     <div id="st">
     <div id="lef"></div>
     <div id="rig">
@@ -128,6 +129,7 @@ let navbar = () => {
        <div id="dd"><button>CHECKOUT</button></div>
        
     </div>
+      
  </div>
       
       <div id="CloseCartBtn">
