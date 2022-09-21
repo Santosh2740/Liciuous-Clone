@@ -26,7 +26,7 @@
     </div>
     <!-- <div class="bar1"><hr /></div> -->
     <div class="head">
-      <h2>Chicken </h2>
+      <h2>Fish</h2>
     </div>  
     <div id="potContainer">
     <div class="images">
@@ -100,14 +100,16 @@
       price.innerText = elem.price;
       var strikePrice = document.createElement("strike");
       strikePrice.innerText = elem.strikePrice;
-
+      
       var btndiv = document.createElement("div");
       btndiv.setAttribute("class", "btndiv");
       var addCart = document.createElement("button");
       addCart.setAttribute("class", "addcartbtn");
       addCart.innerText = "Add to Cart";
       addCart.addEventListener("click", function () {
-        window.location.href = "../ProductDetails/Product_pages.html";
+        localStorage.setItem("name",JSON.stringify("fish"));
+        localStorage.setItem("itemNo",JSON.stringify((elem.id) - Number(1)));
+        window.location.href = "../ProductDetails/Product_Page2.html";
       });
 
       wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);

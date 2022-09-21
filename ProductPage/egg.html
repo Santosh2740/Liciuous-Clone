@@ -101,7 +101,9 @@
       addCart.innerHTML = "Add to Cart";
 
       addCart.addEventListener("click", function () {
-        window.location.href = "../ProductDetails/Product_pages.html";
+        localStorage.setItem("itemNo",JSON.stringify(elem.id));
+        localStorage.setItem("name",JSON.stringify("egg"));
+        window.location.href = "../ProductDetails/Product_Page2.html";
       });
 
       wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);

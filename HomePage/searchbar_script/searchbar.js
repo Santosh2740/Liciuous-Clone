@@ -132,7 +132,7 @@ function _eggdata(eggdata) {
 
     addCart.addEventListener("click", function () {
       window.location.href =
-        "../silly-authority-4051-Fw18_0291-Day-5/Product_pages.html";
+        "../../ProductDetails/Product_pages.html";
     });
 
     wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);

@@ -1,175 +1,45 @@
 let backDat = JSON.parse(localStorage.getItem("data1"));
 console.log(backDat);
-document.getElementById("chickenHead2").innerText = backDat;
 
 let api;
 if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
   api = "tempo";
-  let imagesoftheSlideShow = [
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_display_image/1631077710.8126--2021-09-0810:38:30--1818",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1631077714.4492--2021-09-0810:38:34--1818",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
-  ];
-  let index = 0;
-  let addressoftheimage;
-  let slideshowofdetailsofiamge = () => {
-    let conatiner = document.getElementById("slideShow");
-    addressoftheimage = setInterval(() => {
-      if (index === imagesoftheSlideShow.length) {
-        index = 0;
-      }
-      conatiner.innerHTML = null;
-      let image = document.createElement("img");
-      image.src = imagesoftheSlideShow[index];
-      image.setAttribute("class", "slideshowaimge");
-      conatiner.append(image);
-
-      index++;
-    }, 2000);
-  };
-  slideshowofdetailsofiamge();
 } else if (backDat == "Chicken Curry Cut (Large Pcs) - Large Pack") {
   api = "tempo1";
-  let imagesoftheSlideShow = [
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_avakgtb7ywh/2/prod_display_image/1631077382.6688--2021-09-0810:33:02--1818",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1631077714.4492--2021-09-0810:38:34--1818",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
-  ];
-  let index = 0;
-  let addressoftheimage;
-  let slideshowofdetailsofiamge = () => {
-    let conatiner = document.getElementById("slideShow");
-    addressoftheimage = setInterval(() => {
-      if (index === imagesoftheSlideShow.length) {
-        index = 0;
-      }
-      conatiner.innerHTML = null;
-      let image = document.createElement("img");
-      image.src = imagesoftheSlideShow[index];
-      image.setAttribute("class", "slideshowaimge");
-      conatiner.append(image);
-
-      index++;
-    }, 4000);
-  };
-  slideshowofdetailsofiamge();
 } else if (backDat == "Chicken Soup Bones - (Classic)") {
   api = "tempo2";
-  let imagesoftheSlideShow = [
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
-  ];
-  let index = 0;
-  let addressoftheimage;
-  let slideshowofdetailsofiamge = () => {
-    let conatiner = document.getElementById("slideShow");
-    addressoftheimage = setInterval(() => {
-      if (index === imagesoftheSlideShow.length) {
-        index = 0;
-      }
-      conatiner.innerHTML = null;
-      let image = document.createElement("img");
-      image.src = imagesoftheSlideShow[index];
-      image.setAttribute("class", "slideshowaimge");
-      conatiner.append(image);
-
-      index++;
-    }, 4000);
-  };
-  slideshowofdetailsofiamge();
 } else if (backDat == "Afghani Murgh Seekh Kebab | Ready in 8 Minutes") {
   api = "tempo3";
-  let imagesoftheSlideShow = [
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_ikuk3ilucko/2/prod_display_image/1634458067.3282--2021-10-1713:37:47--905?format=webp",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_fhijtgw0ctk/2/prod_display_image/1613378298.5141--2021-02-1514:08:18--738?format=webp",
-    "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_av4kgtb3l1h/2/prod_image/1632404503.7095--2021-09-2319:11:43--1818",
-  ];
-  let index = 0;
-  let addressoftheimage;
-  let slideshowofdetailsofiamge = () => {
-    let conatiner = document.getElementById("slideShow");
-    addressoftheimage = setInterval(() => {
-      if (index === imagesoftheSlideShow.length) {
-        index = 0;
-      }
-      conatiner.innerHTML = null;
-      let image = document.createElement("img");
-      image.src = imagesoftheSlideShow[index];
-      image.setAttribute("class", "slideshowaimge");
-      conatiner.append(image);
-
-      index++;
-    }, 4000);
-  };
-  slideshowofdetailsofiamge();
 }
-// console.log(api);
+
+let backDat2 = JSON.parse(localStorage.getItem("itemNo"));
+console.log(backDat2);
+let dishname = JSON.parse(localStorage.getItem("name"));
+
+
+let firstBox = document.getElementById("div1_ptodct");
+let conatiner = document.getElementById("slideShow");
 
 let getdata = async () => {
   let res = await fetch(
     `https://safe-eyrie-39519.herokuapp.com/licious/${api}`
   );
   let data = await res.json();
-  //   console.log(data);
   appenvalue(data);
+  AppendSlideImage(data);
   appendva(data);
+
   localStorage.setItem("tempo", JSON.stringify(data));
 };
 getdata();
 
 let CartAllDetials = JSON.parse(localStorage.getItem("CartDetails")) || [];
 
-appendva = (value) => {
-  value.forEach((eleme) => {
-    let stickeyImageCart = document.createElement("img");
-    stickeyImageCart.src = eleme.imgUrl;
-
-    let stickeyPriceCart = document.createElement("p");
-    stickeyPriceCart.innerHTML = eleme.name;
-
-    let stickeyMrpCart = document.createElement("p");
-    stickeyMrpCart.innerHTML = "MRP:";
-    let stickeyNmaecart = document.createElement("h1");
-    stickeyNmaecart.innerHTML = "₹" + eleme.price;
-
-    let stickeybuttonCart = document.createElement("button");
-    stickeybuttonCart.innerHTML = "Offer!!";
-
-    stickeybuttonCart.addEventListener("click", () => {
-      // alert("click");
-      // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
-    });
-
-    let stickeybikeLogo = document.createElement("img");
-    stickeybikeLogo.src = eleme.bikelogo;
-
-    let stickeybikecont = document.createElement("p");
-    stickeybikecont.innerHTML = eleme.bikeContnt;
-
-    let stickeydiv1 = document.createElement("div");
-    stickeydiv1.setAttribute("id", "stickeyCar1");
-    let sticketydiv2 = document.createElement("div");
-    sticketydiv2.setAttribute("id", "stickeyCart2");
-
-    stickeydiv1.append(
-      stickeyImageCart,
-      stickeyPriceCart,
-      stickeyMrpCart,
-      stickeyNmaecart,
-      stickeybuttonCart
-    );
-
-    sticketydiv2.append(stickeybikeLogo, stickeybikecont);
-
-    document.getElementById("FloatCart_page").append(stickeydiv1, sticketydiv2);
-  });
-};
-
 appenvalue = (value) => {
+  document.getElementById("chickenHead2").innerText = backDat;
   let sum2 = 0;
-  let box = document.getElementById("div1_ptodct");
   value.forEach((val) => {
+    // secondbox.innerHTML = null;
     let div = document.createElement("div");
     div.setAttribute("id", "div1_images");
 
@@ -338,21 +208,95 @@ appenvalue = (value) => {
 
     div9.append(span1, span2, span3);
     div2.append(name, desc2, desc, div3, div6, div7);
-    box.append(div, div2);
+    firstBox.append(div, div2);
   });
-
-  showSlides();
-
-  function showSlides() {
-    let i;
-    let dots = document.getElementsByClassName("SlitydeShowdot");
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
-  }
 };
 
+
+
+AppendSlideImage = (data) => {
+  // conatiner.innerHTML = null;
+
+  data.forEach((element) => {
+    // conatinerSecond.innerHTML = null;
+    let div = document.createElement("img");
+    let x = element.imgUrl;
+    for (let i = 0; i <= x.length; i++) {
+      console.log(x[i]);
+      let index = 0;
+      let addressoftheimage;
+      // conatinerSecond.innerHTML = null
+      let slideshowofdetailsofiamge = () => {
+        addressoftheimage = setInterval(() => {
+          if (index === x.length) {
+            index = 0;
+          }
+
+          // conatinerSecond.innerHTML = null;
+          conatiner.innerHTML = null;
+          let image = document.createElement("img");
+          image.src = x[index];
+          image.setAttribute("class", "slideshowaimge");
+          conatiner.append(image);
+
+          index++;
+        }, 4000);
+      };
+      slideshowofdetailsofiamge();
+    }
+  });
+};
+// -------------------------------------------------------------------------------------------------------------
+
+
+
+// let footePageDiv = ;
+
+appendva = (value) => {
+  value.forEach((eleme) => {
+    let stickeyImageCart = document.createElement("img");
+    stickeyImageCart.src = eleme.imgUrl;
+
+    let stickeyPriceCart = document.createElement("p");
+    stickeyPriceCart.innerHTML = eleme.name;
+
+    let stickeyMrpCart = document.createElement("p");
+    stickeyMrpCart.innerHTML = "MRP:";
+    let stickeyNmaecart = document.createElement("h1");
+    stickeyNmaecart.innerHTML = "₹" + eleme.price;
+
+    let stickeybuttonCart = document.createElement("button");
+    stickeybuttonCart.innerHTML = "Offer!!";
+
+    stickeybuttonCart.addEventListener("click", () => {
+      // alert("click");
+      // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
+    });
+
+    let stickeybikeLogo = document.createElement("img");
+    stickeybikeLogo.src = eleme.bikelogo;
+
+    let stickeybikecont = document.createElement("p");
+    stickeybikecont.innerHTML = eleme.bikeContnt;
+
+    let stickeydiv1 = document.createElement("div");
+    stickeydiv1.setAttribute("id", "stickeyCar1");
+    let sticketydiv2 = document.createElement("div");
+    sticketydiv2.setAttribute("id", "stickeyCart2");
+
+    stickeydiv1.append(
+      stickeyImageCart,
+      stickeyPriceCart,
+      stickeyMrpCart,
+      stickeyNmaecart,
+      stickeybuttonCart
+    );
+
+    sticketydiv2.append(stickeybikeLogo, stickeybikecont);
+
+    document.getElementById("FloatCart_page").append(stickeydiv1, sticketydiv2);
+  });
+};
 //---------------------------------------------------------------------------------------------------------------
 
 let getSlideData = async () => {

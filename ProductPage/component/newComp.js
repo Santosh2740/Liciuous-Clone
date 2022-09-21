@@ -24,6 +24,5 @@ let pressing = async () => {
   console.log(data);
   localStorage.setItem("searchresult", JSON.stringify(data));
   console.log(query);
-  window.location.href =
-    "../silly-authority-4051-fw19_0794_day-5/searchdata.html";
+  window.location.href ="../../HomePage/searchdata.html";
 };

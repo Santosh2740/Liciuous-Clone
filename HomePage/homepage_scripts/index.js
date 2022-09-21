@@ -68,10 +68,17 @@ home2arr.forEach((element) => {
   p.innerHTML = element.title;
   // image.setAttribute("src",element.img)
   image.src = element.img;
+  let namm = element.title;
+  localStorage.setItem("validConc2", JSON.stringify(true));
   div.addEventListener("click", () => {
     // alert("clicled");
+    
+    localStorage.setItem("name", JSON.stringify(namm.toLowerCase()));
+    localStorage.setItem("validConc", JSON.stringify(false));
+    
     onhome2();
   });
+  
 
   let onhome2 = () => {
     if (element.title == "Today's Deal") {
@@ -345,9 +352,12 @@ appendSlideNews = (dated) => {
     main.setAttribute("id", "div_3CartBtn2");
     main.innerHTML = "Add to cart";
     main.addEventListener("click", () => {
+      localStorage.setItem("validConc", JSON.stringify(true));
       // alert("clicekd");
       console.log(e.name);
       localStorage.setItem("data1", JSON.stringify(e.name));
+      // localStorage.setItem("validConc2", JSON.stringify(false));
+      // localStorage.setItem("validConc1", JSON.stringify(true));
       window.location.href = "./ProductDetails/Product_pages.html";
     });
 
