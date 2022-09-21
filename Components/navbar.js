@@ -103,6 +103,10 @@ let navbar = () => {
     </div>
     </div>
     <div id="mainCartContantPagr">
+    <h2 id="headingOder" >Order Summary</h2>
+    <p id="headingO" >Congratulations, Your delivery charge is waived off!!!</p>
+    <p id="headingOde" >PROMO CODE : "santosh"</p>
+
     
     <div id="st">
     <div id="lef"></div>

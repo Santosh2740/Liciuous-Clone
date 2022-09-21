@@ -80,9 +80,6 @@ let getOtpNumbervaild = () => {
 };
 
 // Cart-------------COMPLETED---------------------------itrm-------------------------
-
-var cartLic = JSON.parse(localStorage.getItem("CartDetails")) || [];
-
 var cont = document.querySelector("#lef");
 var total = document.querySelector("#total");
 var tItem = document.querySelector("#tItem");
@@ -90,13 +87,12 @@ var promo = document.querySelector("#promo");
 var form = document.querySelector("#apply");
 var checkout = document.querySelector("#dd");
 
-var sum = 0;
-var n = cartLic.length;
-var c = 0;
-
-displayDate(cartLic);
+var cartLic = JSON.parse(localStorage.getItem('cardArr')) || [];
 
 function displayDate(data) {
+    var n = cartLic.length;
+    var c = 0;
+    var sum = 0;
   data.forEach(function (el, index) {
     var count = 1;
 
@@ -130,11 +126,16 @@ function displayDate(data) {
     remove.innerText = "REMOVE";
     remove.id = "remove";
     remove.addEventListener("click", function () {
+        
       event.target.parentNode.remove();
       data.splice(index, 1);
-      sum -= +el.price;
-      localStorage.setItem("CartDetails", JSON.stringify(cartLic));
-      //  window.location.reload();
+      sum = sum - Number(el.price);
+      n--;
+      total.innerHTML= sum;
+      tItem.innerText = n
+      localStorage.setItem("cardArr", JSON.stringify(cartLic));
+      
+    //    window.location.reload();
     });
 
     var inc = document.createElement("button");
@@ -184,8 +185,6 @@ form.addEventListener("submit", function (event) {
   }
 });
 
-displayDate(cartLic);
-
 let loginsatuebackprocess = localStorage.getItem("loginState");
 
 dd.onclick = function () {
@@ -197,6 +196,7 @@ dd.onclick = function () {
 };
 
 displayDate(cartLic);
+
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 // ------------------------FOR--LOCATION---I--AM---NOT---FIND--LOCATON---------------------------------------------------------------------------------------------

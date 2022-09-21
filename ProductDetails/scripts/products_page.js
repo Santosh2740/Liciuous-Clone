@@ -35,7 +35,7 @@ let getdata = async () => {
 };
 getdata();
 
-let CartAllDetials = JSON.parse(localStorage.getItem("CartDetails")) || [];
+let CartAllDetials = JSON.parse(localStorage.getItem('cardArr')) || [];
 
 appenvalue = (value) => {
   document.getElementById("chickenHead2").innerText = backDat;
@@ -139,7 +139,7 @@ appenvalue = (value) => {
       if (center.innerHTML == "Add to cart") {
         center.innerHTML = 0;
         CartAllDetials.push(val);
-        localStorage.setItem("CartDetails", JSON.stringify(CartAllDetials));
+        localStorage.setItem('cardArr', JSON.stringify(CartAllDetials));
         // displayDate(cartLic);
         jor.style.display = "inline-block";
         substruct.style.display = "inline-block";
@@ -395,7 +395,7 @@ appendSlideNews = (dated) => {
         main.innerHTML = 0;
         // CartAllDetials.push(e);
         //
-        // localStorage.setItem("CartDetails", JSON.stringify(CartAllDetials));
+        // localStorage.setItem('cardArr', JSON.stringify(CartAllDetials));
         add.style.display = "inline-block";
         minus.style.display = "inline-block";
         // displayDate(cartLic);

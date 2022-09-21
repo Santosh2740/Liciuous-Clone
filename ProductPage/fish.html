@@ -99,7 +99,7 @@ let sortNAME = async () => {
       main.setAttribute("class", "main");
       var img = document.createElement("img");
 
-      img.setAttribute("src", elem.imgUrl);
+      img.setAttribute("src", elem.imgUrl[0]);
       img.setAttribute("class", "image");
       var name = document.createElement("h4");
       name.innerText = elem.name;

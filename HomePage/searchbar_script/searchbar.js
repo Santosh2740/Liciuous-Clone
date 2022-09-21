@@ -75,6 +75,11 @@ let pressing = async () => {
   _eggdata(data);
 };
 
+let searchname = JSON.parse(localStorage.getItem("name"));
+let finalNmae = searchname.toLowerCase();
+
+let CartDataAdding = JSON.parse(localStorage.getItem('cardArr'))|| [];
+
 let data = JSON.parse(localStorage.getItem("searchresult"));
 console.log(data);
 _eggdata(data);
@@ -82,11 +87,11 @@ _eggdata(data);
 function _eggdata(eggdata) {
   let box = document.getElementById("searchcontainer");
   box.innerHTML= null;
-  eggdata.map(function (elem) {
+  eggdata.forEach(elem => {
     var main = document.createElement("div");
     main.setAttribute("class", "main");
     var img = document.createElement("img");
-    img.setAttribute("src", elem.imgUrl);
+    img.setAttribute("src", elem.imgUrl[0]);
     img.setAttribute("class", "image");
 
     var name = document.createElement("h4");
@@ -131,7 +136,13 @@ function _eggdata(eggdata) {
     addCart.innerHTML = "Add to Cart";
 
     addCart.addEventListener("click", function () {
-      window.location.href = "../../ProductDetails/Product_pages.html";
+      CartDataAdding.push(elem);
+      localStorage.setItem("cardArr", JSON.stringify(CartDataAdding));
+      // AddToCart(elem)
+      localStorage.setItem("itemNo",JSON.stringify(elem.id));
+        localStorage.setItem("name",JSON.stringify(`${finalNmae}`));
+        // window.location.href = "../ProductDetails/Product_Page2.html";
+        
     });
 
     wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);
@@ -144,8 +155,14 @@ function _eggdata(eggdata) {
     // let main2 = searchcontainer;
 
     box.append(main);
+    
   });
+  
 }
+
+// let AddToCart = (elem) =>{
+  
+// }
 
 let dataname = JSON.parse(localStorage.getItem("name"));
 // console.log(dataname);
@@ -168,8 +185,7 @@ backimg2.src = img2;
 backimg2.setAttribute("id", "imaging1");
 document.getElementById("imaging1").append(backimg2);
 
-let searchname = JSON.parse(localStorage.getItem("name"));
-let finalNmae = searchname.toLowerCase();
+
 
 document.getElementById("sort-low-to-high").onclick = async (e) => {
   // alert("click");

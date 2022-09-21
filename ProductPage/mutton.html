@@ -47,6 +47,7 @@
       <div class="ba"><hr class="bar2" /></div><br>
     <div id="container"></div>
     <div id="footer"></div>
+    
   </body>
 </html>
 <script>
@@ -89,10 +90,12 @@ let sortNAME = async () => {
   
 };
 
+let CartData = JSON.parse(localStorage.getItem('cardArr'))|| [];
+
   function _mutton(muttondata) {
     let asdqwww = document.querySelector("#container")
     asdqwww.innerHTML = null;
-    muttondata.map(function (elem) {
+    muttondata.forEach(elem => {
       let main = document.createElement("div");
       main.setAttribute("class", "main");
       let img = document.createElement("img");
@@ -138,10 +141,12 @@ let sortNAME = async () => {
       addCart.setAttribute("class", "addcartbtn");
       addCart.innerHTML = "ADD TO CART";
       addCart.addEventListener("click", function () {
+        AddToCart(elem);
         // JSON.parse(localStorage.getItem("name"))
         localStorage.setItem("itemNo",JSON.stringify(elem.id));
         localStorage.setItem("name",JSON.stringify("mutton"));
-        window.location.href = "../ProductDetails/Product_Page2.html";
+        // window.location.href = "../ProductDetails/Product_Page2.html";
+       
       });
 
       wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);
@@ -150,8 +155,16 @@ let sortNAME = async () => {
 
       main.append(img, name, des, wgt, pri);
       asdqwww.append(main);
+      
     });
+    
   }
+
+  let AddToCart = (elem) =>{
+    CartData.push(elem);
+        localStorage.setItem("cardArr", JSON.stringify(CartData));
+}
+
 </script>
 <script src="./component/newComp.js" type="module"></script>
 <script src="../Components/login.js" type="module"></script>
