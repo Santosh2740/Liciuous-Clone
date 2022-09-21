@@ -10,6 +10,8 @@ if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
   api = "tempo2";
 } else if (backDat == "Afghani Murgh Seekh Kebab | Ready in 8 Minutes") {
   api = "tempo3";
+}else if(backDat == "Chunky Shawarma Chicken Spread"){
+  api = "tempo4";
 }
 
 let backDat2 = JSON.parse(localStorage.getItem("itemNo"));

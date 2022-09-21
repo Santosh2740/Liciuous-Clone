@@ -19,11 +19,11 @@
     <div class="refermain">
       <p id="refhome"><a href="../index.html" class="atultoday">Home&nbsp;&nbsp;&nbsp;</a></p>
       <p><i class="fa-solid fa-caret-right"></i></p>
-      <p id="chickenHead">&nbsp;&nbsp;&nbsp;<span style="color: #D11243;">Chicken</span></p>
+      <p id="chickenHead">&nbsp;&nbsp;&nbsp;<span style="color: #D11243;">Egg</span></p>
     </div>
     <!-- <div class="bar1"><hr /></div> -->
     <div class="head">
-      <h2>Chicken </h2>
+      <h2>Chicken &nbsp;&nbsp;<i class="fa-solid fa-caret-right"></i></h2>
     </div>  
     <div id="potContainer">
     <div class="images">
@@ -40,6 +40,9 @@
     </div>
   </div> 
     <div class="bar"><hr /></div><br>
+    <div id="filter"></div>
+    <div id="seperationpart"></div>
+      <div class="bar2"><hr /></div><br>
     <div id="container"></div>
     <div id="footer"></div>
   </body>
@@ -51,7 +54,37 @@
     _eggdata(data);
   };
   getData();
+  let sortLTH = async () => {
+  let res = await fetch(
+    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=asc"
+  );
+  let data = await res.json();
+    console.log(data);
+  // append(data);
+  _eggdata(data)
+};
+let sortHTL = async () => {
+  let res = await fetch(
+    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=desc"
+  );
+  let data = await res.json();
+  console.log(data);
+  // append(data);
+  _eggdata(data)
+};
+let sortNAME = async () => {
+  let res = await fetch(
+    `https://safe-eyrie-39519.herokuapp.com/licious/chicken/?_sort=name&_order=asc`
+  );
+  res = await res.json();
+  // console.log(res);
+  _eggdata(data)
+  
+};
+  
   function _eggdata(eggdata) {
+    let newCinata = document.querySelector("#container");
+    newCinata.innerHTML =null;
     eggdata.map(function (elem) {
       var main = document.createElement("div");
       main.setAttribute("class", "main");
@@ -111,9 +144,10 @@
       // btndiv.append(addCart)
 
       main.append(img, name, des, wgt, pri);
-      document.querySelector("#container").append(main);
+      newCinata.append(main);
     });
   }
 </script>
 <script src="./component/newComp.js" type="module"></script>
 <script src="../Components/login.js" type="module"></script>
+<script src="./component/new2com.js" type="module"></script>

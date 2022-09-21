@@ -6,6 +6,8 @@ import footerTal from "../../Components/footer.js";
 
 document.getElementById("footer").innerHTML = footerTal();
 
+// let hightolow = document.getElementById("sort-low-to-high")
+
 let searchquery = document.querySelector("#search_bar");
 
 searchquery.addEventListener("keypress", () => {
@@ -48,7 +50,7 @@ let pressing = async () => {
     localStorage.setItem("image2", JSON.stringify(img2));
     localStorage.setItem("desc2", JSON.stringify(desc2));
   }
-  if(query == "mutton"||"Mutton"){
+  if (query == "mutton" || "Mutton") {
     let img1 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78c6b83b3c";
     let desc1 = "Prime-grade Meats";
     let img2 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78c97c079f";
@@ -57,9 +59,8 @@ let pressing = async () => {
     localStorage.setItem("desc1", JSON.stringify(desc1));
     localStorage.setItem("image2", JSON.stringify(img2));
     localStorage.setItem("desc2", JSON.stringify(desc2));
-
   }
-  if(query == "chicken" || "Chicken"){
+  if (query == "chicken" || "Chicken") {
     let img1 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78b9c4b2e0";
     let desc1 = "Farm-raised superior breed ";
     let img2 = "https://d2407na1z3fc0t.cloudfront.net/USP/usp_58e78bdf673b7";
@@ -68,7 +69,6 @@ let pressing = async () => {
     localStorage.setItem("desc1", JSON.stringify(desc1));
     localStorage.setItem("image2", JSON.stringify(img2));
     localStorage.setItem("desc2", JSON.stringify(desc2));
-
   }
 
   window.location.href = "./searchdata.html";
@@ -80,8 +80,8 @@ console.log(data);
 _eggdata(data);
 
 function _eggdata(eggdata) {
-  // let box = document.getElementById("searchconatiner");
-  // box.innerHTML= null;
+  let box = document.getElementById("searchcontainer");
+  box.innerHTML= null;
   eggdata.map(function (elem) {
     var main = document.createElement("div");
     main.setAttribute("class", "main");
@@ -131,8 +131,7 @@ function _eggdata(eggdata) {
     addCart.innerHTML = "Add to Cart";
 
     addCart.addEventListener("click", function () {
-      window.location.href =
-        "../../ProductDetails/Product_pages.html";
+      window.location.href = "../../ProductDetails/Product_pages.html";
     });
 
     wgt.append(net_tag, net, n_gm, gross_tag, gross, g_gm);
@@ -144,7 +143,7 @@ function _eggdata(eggdata) {
     // main2.innerHTML = null;
     // let main2 = searchcontainer;
 
-    searchcontainer.append(main);
+    box.append(main);
   });
 }
 
@@ -160,14 +159,45 @@ let desc1 = JSON.parse(localStorage.getItem("desc1"));
 
 let backimg1 = document.createElement("img");
 backimg1.src = img1;
-backimg1.setAttribute("id","imaging")
+backimg1.setAttribute("id", "imaging");
 document.getElementById("imaging").append(backimg1);
-document.getElementById("desi1").innerText= desc1;
+document.getElementById("desi1").innerText = desc1;
 
 let backimg2 = document.createElement("img");
-backimg2.src= img2;
-backimg2.setAttribute("id","imaging1")
+backimg2.src = img2;
+backimg2.setAttribute("id", "imaging1");
 document.getElementById("imaging1").append(backimg2);
 
+let searchname = JSON.parse(localStorage.getItem("name"));
+let finalNmae = searchname.toLowerCase();
+
+document.getElementById("sort-low-to-high").onclick = async (e) => {
+  // alert("click");
+  let res = await fetch(
+    `https://safe-eyrie-39519.herokuapp.com/licious/${finalNmae}?_sort=price&_order=desc`
+  );
+  let data = await res.json();
+  // console.log(data);
+  _eggdata(data);
+};
+document.getElementById("sort-high-to-loW").onclick = async (e) => {
+  // alert("click");
+  let res = await fetch(
+    `https://safe-eyrie-39519.herokuapp.com/licious/${finalNmae}?_sort=price&_order=asc`
+  );
+  let data = await res.json();
+  // console.log(data);
+  _eggdata(data);
+};
+// 
+document.getElementById("sort-by-name").onclick = async (e) => {
+  // alert("click");
+  let res = await fetch(
+    `https://safe-eyrie-39519.herokuapp.com/licious/${finalNmae}?_sort=name&_order=asc`
+  );
+  let data = await res.json();
+  // console.log(data);
+  _eggdata(data);
+};
 
 

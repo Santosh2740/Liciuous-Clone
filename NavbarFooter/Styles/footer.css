@@ -51,6 +51,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+  gap: 20px;
 }
 #rao5 > p {
   display: flex;

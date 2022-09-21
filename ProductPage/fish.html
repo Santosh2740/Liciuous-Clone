@@ -7,7 +7,10 @@
     <title>
       Online Fish Store - Order Fresh Fish Online At Best Price - Licious
     </title>
-    <!-- css -->
+    <script
+    src="https://kit.fontawesome.com/afc5c86662.js"
+    crossorigin="anonymous"
+  ></script>
 
     <link rel="stylesheet" href="../shilajit_styles/fish.css" />
     <link rel="shortcut icon" href="https://www.licious.in/favicon_old.ico" />
@@ -22,11 +25,11 @@
     <div class="refermain">
       <p id="refhome"><a href="../index.html" class="atultoday">Home&nbsp;&nbsp;&nbsp;</a></p>
       <p><i class="fa-solid fa-caret-right"></i></p>
-      <p id="chickenHead">&nbsp;&nbsp;&nbsp;<span style="color: #D11243;">Chicken</span></p>
+      <p id="chickenHead">&nbsp;&nbsp;&nbsp;<span style="color: #D11243;">Fish</span></p>
     </div>
     <!-- <div class="bar1"><hr /></div> -->
     <div class="head">
-      <h2>Fish</h2>
+      <h2>Fish &nbsp;&nbsp;<i class="fa-solid fa-caret-right"></i></h2>
     </div>  
     <div id="potContainer">
     <div class="images">
@@ -43,6 +46,9 @@
     </div>
   </div> 
     <div class="bar"><hr /></div><br>
+    <div id="filter"></div>
+    <div id="seperationpart"></div>
+      <div class="bar2"><hr /></div><br>
     <div id="container"></div>
     <div id="footer"></div>
   </body>
@@ -58,7 +64,36 @@
     _fish(data);
   };
   getData();
+  let sortLTH = async () => {
+  let res = await fetch(
+    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=asc"
+  );
+  let data = await res.json();
+    console.log(data);
+  // append(data);
+  _fish(data)
+};
+let sortHTL = async () => {
+  let res = await fetch(
+    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=desc"
+  );
+  let data = await res.json();
+  console.log(data);
+  // append(data);
+  _fish(data)
+};
+let sortNAME = async () => {
+  let res = await fetch(
+    `https://safe-eyrie-39519.herokuapp.com/licious/chicken/?_sort=name&_order=asc`
+  );
+  res = await res.json();
+  // console.log(res);
+  _fish(data)
+  
+};
   function _fish(fishData) {
+    let newseedew = document.querySelector("#container")
+    newseedew.innerHTML = null;
     fishData.map(function (elem) {
       var main = document.createElement("div");
       main.setAttribute("class", "main");
@@ -118,9 +153,10 @@
       pri.append(price_tag, cuurency, price, strikePrice, addCart);
 
       main.append(img, name, des, wgt, pri);
-      document.querySelector("#container").append(main);
+      newseedew.append(main);
     });
   }
 </script>
 <script src="./component/newComp.js" type="module"></script>
 <script src="../Components/login.js" type="module"></script>
+<script src="./component/new2com.js" type="module"></script>

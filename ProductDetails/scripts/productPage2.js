@@ -17,22 +17,6 @@ console.log(backDat2);
 
 let dishname = JSON.parse(localStorage.getItem("name"));
 
-
-// let firstBox = document.getElementById("div1_ptodct");
-// secondbox.innerHTML= null
-// firstBox.innerHTML= null;
-// let conatiner = document.getElementById("slideShow");
-// conatiner.innerHTML =null;
-
-// let secondbox = document.getElementById("div1_ptodct");
-// firstBox.innerHTML= null
-// secondbox.innerHTML= null;
-
-// let conatinerSecond = document.getElementById("slideShow");
-// conatinerSecond.innerHTML = null;
-
-
-
 let getdata = async () => {
   let res = await fetch(
     `https://safe-eyrie-39519.herokuapp.com/licious/${api}`
@@ -225,8 +209,6 @@ let CartAllDetials = JSON.parse(localStorage.getItem("CartDetails")) || [];
 //   });
 // };
 
-
-
 // AppendSlideImage = (data) => {
 //   // conatiner.innerHTML = null;
 
@@ -260,9 +242,6 @@ let CartAllDetials = JSON.parse(localStorage.getItem("CartDetails")) || [];
 //   });
 // };
 
-
-
-
 // ---------------------------------------------------------------------------------
 
 // let backDat2 = JSON.parse(localStorage.getItem("itemNo"));
@@ -282,7 +261,7 @@ let nextpageData = async () => {
   let data = await res.json();
   console.log(data[backDat2]);
   let neewss = data[backDat2];
-//   console.log(neewss.imgUrl);
+  //   console.log(neewss.imgUrl);
   //   let latestImg = neewss.imgUrl;
   document.getElementById("chickenHead2").innerText = neewss.name;
 

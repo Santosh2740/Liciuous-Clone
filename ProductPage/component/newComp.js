@@ -6,6 +6,8 @@ import footerTal from "../../Components/footer.js";
 document.getElementById("footer").innerHTML = footerTal();
 // console.log(footerTal());
 
+
+
 let searchquery = document.querySelector("#search_bar");
 
 searchquery.addEventListener("keypress", () => {

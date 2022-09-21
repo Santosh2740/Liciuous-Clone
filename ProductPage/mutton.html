@@ -19,11 +19,11 @@
     <div class="refermain">
       <p id="refhome"><a href="../index.html" class="atultoday">Home&nbsp;&nbsp;&nbsp;</a></p>
       <p><i class="fa-solid fa-caret-right"></i></p>
-      <p id="chickenHead">&nbsp;&nbsp;&nbsp;<span style="color: #D11243;">Chicken</span></p>
+      <p id="chickenHead">&nbsp;&nbsp;&nbsp;<span style="color: #D11243;">Mutton</span></p>
     </div>
     <!-- <div class="bar1"><hr /></div> -->
     <div class="head">
-      <h2>Mutton </h2>
+      <h2>Mutton &nbsp;&nbsp;<i class="fa-solid fa-caret-right"></i></h2>
     </div>  
     <div id="potContainer">
     <div class="images">
@@ -40,6 +40,11 @@
     </div>
   </div> 
     <div class="bar"><hr /></div><br>
+     <div id="filter"></div>
+  <!-- </div> -->
+      
+      <div id="seperationpart"></div>
+      <div class="ba"><hr class="bar2" /></div><br>
     <div id="container"></div>
     <div id="footer"></div>
   </body>
@@ -54,7 +59,38 @@
     console.log(data);
   };
   getData();
+  let sortLTH = async () => {
+  let res = await fetch(
+    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=asc"
+  );
+  let data = await res.json();
+    // console.log(data);
+  // append(data);
+  _mutton(data)
+};
+let sortHTL = async () => {
+  let res = await fetch(
+    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=desc"
+  );
+  let data = await res.json();
+  // console.log(data);
+  // append(data);
+  _mutton(data)
+};
+// 
+let sortNAME = async () => {
+  let res = await fetch(
+    `https://safe-eyrie-39519.herokuapp.com/licious/chicken/?_sort=name&_order=asc`
+  );
+  res = await res.json();
+  // console.log(res);
+  _mutton(data)
+  
+};
+
   function _mutton(muttondata) {
+    let asdqwww = document.querySelector("#container")
+    asdqwww.innerHTML = null;
     muttondata.map(function (elem) {
       let main = document.createElement("div");
       main.setAttribute("class", "main");
@@ -112,9 +148,10 @@
       // btndiv.append(addCart)
 
       main.append(img, name, des, wgt, pri);
-      document.querySelector("#container").append(main);
+      asdqwww.append(main);
     });
   }
 </script>
 <script src="./component/newComp.js" type="module"></script>
 <script src="../Components/login.js" type="module"></script>
+<script src="./component/new2com.js" type="module"></script>
