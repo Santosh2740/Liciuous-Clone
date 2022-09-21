@@ -86,7 +86,7 @@ let sortNAME = async () => {
   let res = await fetch(
     `https://safe-eyrie-39519.herokuapp.com/licious/chicken/?_sort=name&_order=asc`
   );
-  res = await res.json();
+  let data = await res.json();
   // console.log(res);
   _fish(data)
   
