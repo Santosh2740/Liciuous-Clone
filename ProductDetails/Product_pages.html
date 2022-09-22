@@ -107,3 +107,12 @@
 ></script>
 <script src="./components/satosh_com.js" type="module"></script>
 <script src="../Components/login.js" type="module"></script>
+<script>
+var body = document.body;
+var element = document.getElementById("FloatCart_page");
+document.addEventListener("scroll", function () {
+  var scrollAmt = window.pageYOffset || document.documentElement.scrollTop;
+  if (window.innerHeight / 2 >= scrollAmt) element.style.display = "none";
+  else element.style.display = "block";
+});
+</script>

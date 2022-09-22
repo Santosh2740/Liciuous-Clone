@@ -145,6 +145,8 @@ function _eggdata(eggdata) {
       localStorage.setItem("itemNo",JSON.stringify(elem.id));
         localStorage.setItem("name",JSON.stringify(`${finalNmae}`));
         // window.location.href = "../ProductDetails/Product_Page2.html";
+        alert("Product Added Sucessfully!!")
+        window.location.reload();
         
     });
 

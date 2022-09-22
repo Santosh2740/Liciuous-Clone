@@ -533,14 +533,16 @@ body {
   height: 600px;
   width: 550px;
   /* border: 1px solid black; */
-  margin-top: -41%;
-  margin-left: 8.5%;
+  margin-top: -42%;
+  margin-left: 8%;
+  
 }
 #slideshowcontant {
   height: 50%;
   width: 87%;
   /* border: 2px solid blue; */
   margin-left: 7%;
+  border-radius:10px ;
 }
 .mySlidespages > img {
   max-width: 100%;
@@ -568,6 +570,7 @@ body {
   height: 330px;
   width: 500px;
   margin-left: 25px;
+  border-radius: 10px;
 }
 
 /* //-------------------------------------------------------------------------------------------------- */

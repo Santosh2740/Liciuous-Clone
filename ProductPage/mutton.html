@@ -140,10 +140,13 @@ let CartData = JSON.parse(localStorage.getItem('cardArr'))|| [];
       addCart.setAttribute("class", "addcartbtn");
       addCart.innerHTML = "ADD TO CART";
       addCart.addEventListener("click", function () {
-        AddToCart(elem);
+        // AddToCart(elem);
         // JSON.parse(localStorage.getItem("name"))
-        localStorage.setItem("itemNo",JSON.stringify(elem.id));
         localStorage.setItem("name",JSON.stringify("mutton"));
+        localStorage.setItem("itemNo",JSON.stringify((elem.id)));
+        window.location.href = "../ProductDetails/Product_Page2.html";
+        // localStorage.setItem("itemNo",JSON.stringify(elem.id));
+        // localStorage.setItem("name",JSON.stringify("mutton"));
         // window.location.href = "../ProductDetails/Product_Page2.html";
        
       });

@@ -14,13 +14,13 @@ let navbar = () => {
                 <option value="up">Lucknow</option>
         </select>
         <div id="logoadjust">
-            <img id="location_logo" src="https://www.licious.in/img/rebranding/location_icon.svg" alt="location_logo">
+            <img id="location_logo" src="https://www.licious.in/img/rebranding/location_icon.svg" alt="location_logo" >
             </div>
     </div>
     
     
     <!-- search tag -->
-        <input  id="search_bar" type="text" placeholder="Search &nbsp;&nbsp; Fish , Mutton , Chicken , Egg , Dishes_of_chicken , bestSeller ">
+        <input  id="search_bar" type="text" placeholder=" Fish , Mutton , Chicken , Egg , Dishes_of_chicken , bestSeller ,sauce,random ">
     
     
     

@@ -1,5 +1,5 @@
 let backDat = JSON.parse(localStorage.getItem("data1"));
-console.log(backDat);
+// console.log(backDat);
 
 let api;
 if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
@@ -13,22 +13,11 @@ if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
 }
 
 let backDat2 = JSON.parse(localStorage.getItem("itemNo"));
-console.log(backDat2);
+// console.log(backDat2);
 
 let dishname = JSON.parse(localStorage.getItem("name"));
 
-let getdata = async () => {
-  let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/${api}`
-  );
-  let data = await res.json();
-  // appenvalue(data);
-  // AppendSlideImage(data);
-  // appendva(data);
-
-  localStorage.setItem("tempo", JSON.stringify(data));
-};
-getdata();
+let footePageDiv = document.getElementById("FloatCart_pageSecond");
 
 let CartAllDetials = JSON.parse(localStorage.getItem('cardArr')) || [];
 
@@ -45,9 +34,14 @@ let nextpageData = async () => {
   let data = await res.json();
   console.log(data[backDat2]);
   let neewss = data[backDat2];
+  // appendva(data);
   //   console.log(neewss.imgUrl);
   //   let latestImg = neewss.imgUrl;
   document.getElementById("chickenHead2").innerText = neewss.name;
+  let title_el = document.querySelector("title");
+  if(title_el)
+      title_el.innerHTML = neewss.name;
+
 
   let sum2 = 0;
   let div = document.createElement("div");
@@ -124,7 +118,7 @@ let nextpageData = async () => {
   let price = document.createElement("h3");
   price.innerHTML = " ₹ " + neewss.price;
   price.setAttribute("id", "div1_weigthlastprice");
-  console.log(neewss.price);
+  // console.log(neewss.price);
 
   let CartButton2 = document.createElement("div");
   CartButton2.setAttribute("id", "stylingBtn1");
@@ -161,7 +155,7 @@ let nextpageData = async () => {
     totalPrice = substaract * sum2;
     let LOgoOfprice = "₹";
     // console.log(sum2)
-    console.log(totalPrice);
+    // console.log(totalPrice);
     document.getElementById("totalpriceShow").innerHTML = null;
     document
       .getElementById("totalpriceShow")
@@ -178,7 +172,7 @@ let nextpageData = async () => {
     sum2 = neewss.price;
     totalPrice = number * sum2;
     // console.log(sum2)
-    console.log(totalPrice);
+    // console.log(totalPrice);
     document.getElementById("totalpriceShow").innerHTML = null;
     document.getElementById("totalpriceShow").append(`₹${totalPrice}`);
     if (center.innerHTML == 6) {
@@ -223,7 +217,7 @@ let nextpageData = async () => {
   let dsda = document.createElement("img");
   let x = neewss.imgUrl;
   for (let i = 0; i <= x.length; i++) {
-    console.log(x[i]);
+    // console.log(x[i]);
     let index = 0;
     let addressoftheimage;
     let slideshowofdetailsofiamge = () => {
@@ -238,74 +232,132 @@ let nextpageData = async () => {
         conatinerSecond.append(image);
 
         index++;
-      }, 4000);
+      }, 3000);
     };
     slideshowofdetailsofiamge();
   }
 
-  document.getElementById("slideSho2").append(dsda);
+
+
+  // let stickeyImageCart1 = document.createElement("img");
+  // stickeyImageCart1.src = neewss.imgUrl[0];
+  // footePageDiv.append(stickeyImageCart1)
+
+  let stickeyImageCart = document.createElement("img");
+  stickeyImageCart.src = neewss.imgUrl;
+
+  let stickeyPriceCart = document.createElement("p");
+  stickeyPriceCart.innerHTML = neewss.name;
+
+  let stickeyMrpCart = document.createElement("p");
+  stickeyMrpCart.innerHTML = "MRP:";
+  let stickeyNmaecart = document.createElement("h1");
+  stickeyNmaecart.innerHTML = "₹" + neewss.price;
+
+  let stickeybuttonCart = document.createElement("button");
+  stickeybuttonCart.innerHTML = "Offer!!";
+
+  stickeybuttonCart.addEventListener("click", () => {
+    // alert("click");
+    // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
+  });
+
+  let stickeybikeLogo = document.createElement("img");
+  stickeybikeLogo.src = neewss.bikelogo;
+
+  let stickeybikecont = document.createElement("p");
+  stickeybikecont.innerHTML = neewss.bikeContnt;
+
+  let stickeydiv1 = document.createElement("div");
+  stickeydiv1.setAttribute("id", "stickeyCar1");
+  let sticketydiv2 = document.createElement("div");
+  sticketydiv2.setAttribute("id", "stickeyCart2");
+
+  stickeydiv1.append(
+    stickeyImageCart,
+    stickeyPriceCart,
+    stickeyMrpCart,
+    stickeyNmaecart,
+    stickeybuttonCart
+  );
+
+  sticketydiv2.append(stickeybikeLogo, stickeybikecont);
+
+  footePageDiv.append(stickeydiv1,sticketydiv2);
+
 };
 
 nextpageData();
 // -------------------------------------------------------------------------------------------------------------
 
-let getdatafooter = async () => {
-  let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/${api}`
-  );
-  let data = await res.json();
-  appendva(data);
-};
-getdatafooter();
 
-let footePageDiv = document.getElementById("FloatCart_page");
+// let getdatafooter2 = async () => {
+//   let res = await fetch(
+//     `https://safe-eyrie-39519.herokuapp.com/licious/${dishname}`
+//   );
+//   let data = await res.json();
+//   // appendva21(data);
+//   // console.log(data)
 
-appendva = (value) => {
-  value.forEach((eleme) => {
-    let stickeyImageCart = document.createElement("img");
-    stickeyImageCart.src = eleme.imgUrl;
+//   let stickeyImageCart1 = document.createElement("img");
+//     stickeyImageCart1.src = data.imgUrl[0];
+//     footePageDiv.append(stickeyImageCart1)
 
-    let stickeyPriceCart = document.createElement("p");
-    stickeyPriceCart.innerHTML = eleme.name;
+    
 
-    let stickeyMrpCart = document.createElement("p");
-    stickeyMrpCart.innerHTML = "MRP:";
-    let stickeyNmaecart = document.createElement("h1");
-    stickeyNmaecart.innerHTML = "₹" + eleme.price;
+  
 
-    let stickeybuttonCart = document.createElement("button");
-    stickeybuttonCart.innerHTML = "Offer!!";
+// };
+// getdatafooter2();
 
-    stickeybuttonCart.addEventListener("click", () => {
-      // alert("click");
-      // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
-    });
 
-    let stickeybikeLogo = document.createElement("img");
-    stickeybikeLogo.src = eleme.bikelogo;
 
-    let stickeybikecont = document.createElement("p");
-    stickeybikecont.innerHTML = eleme.bikeContnt;
+// appendva21 = (value) => {
+//   value.forEach((eleme) => {
+//     let stickeyImageCart1 = document.createElement("img");
+//     stickeyImageCart1.src = eleme.imgUrl;
 
-    let stickeydiv1 = document.createElement("div");
-    stickeydiv1.setAttribute("id", "stickeyCar1");
-    let sticketydiv2 = document.createElement("div");
-    sticketydiv2.setAttribute("id", "stickeyCart2");
+//     let stickeyPriceCart1 = document.createElement("p");
+//     stickeyPriceCart1.innerHTML = eleme.name;
 
-    stickeydiv1.append(
-      stickeyImageCart,
-      stickeyPriceCart,
-      stickeyMrpCart,
-      stickeyNmaecart,
-      stickeybuttonCart
-    );
+//     let stickeyMrpCart1 = document.createElement("p");
+//     stickeyMrpCart1.innerHTML = "MRP:";
+//     let stickeyNmaecart1 = document.createElement("h1");
+//     stickeyNmaecart1.innerHTML = "₹" + eleme.price;
 
-    sticketydiv2.append(stickeybikeLogo, stickeybikecont);
+//     let stickeybuttonCart1 = document.createElement("button");
+//     stickeybuttonCart1.innerHTML = "Offer!!";
 
-    footePageDiv.append(stickeydiv1, sticketydiv2);
-  });
-};
-//---------------------------------------------------------------------------------------------------------------
+//     stickeybuttonCart1.addEventListener("click", () => {
+//       // alert("click");
+//       // window.location.href ="../../silly-authority-4051/Pages/cartPage.html"
+//     });
+
+//     let stickeybikeLogo1 = document.createElement("img");
+//     stickeybikeLogo1.src = eleme.bikelogo;
+
+//     let stickeybikecont1 = document.createElement("p");
+//     stickeybikecont1.innerHTML = eleme.bikeContnt;
+
+//     let stickeydiv1 = document.createElement("div");
+//     stickeydiv1.setAttribute("id", "stickeyCar1");
+//     let sticketydiv23 = document.createElement("div");
+//     sticketydiv2.setAttribute("id", "stickeyCart2");
+
+//     stickeydiv1.append(
+//       stickeyImageCart1,
+//       stickeyPriceCart1,
+//       stickeyMrpCart1,
+//       stickeyNmaecart1,
+//       stickeybuttonCart1
+//     );
+
+//     sticketydiv23.append(stickeybikeLogo1, stickeybikecont1);
+
+//     // footePageDiv.append(stickeydiv1, sticketydiv23);
+//   });
+// };
+// //---------------------------------------------------------------------------------------------------------------
 
 let getSlideData = async () => {
   try {
@@ -330,7 +382,7 @@ appendSlideNews = (dated) => {
     div.setAttribute("id", "div3_cont");
 
     let img = document.createElement("img");
-    img.setAttribute("src", e.imgUrl);
+    img.setAttribute("src", e.imgUrl[0]);
     img.setAttribute("id", "div_3image");
 
     let name = document.createElement("h4");
@@ -413,7 +465,7 @@ appendSlideNews = (dated) => {
       sum = e.price;
       totalPrice = substaract * sum;
       // console.log(sum2)
-      console.log(totalPrice);
+      // console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
       document.getElementById("totalpriceShow").append(`${totalPrice}`);
       if (main.innerHTML < 1) {
@@ -430,7 +482,7 @@ appendSlideNews = (dated) => {
       sum = e.price;
       totalPrice = number * sum;
       // console.log(sum2)
-      console.log(totalPrice);
+      // console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
       document.getElementById("totalpriceShow").append(`₹${totalPrice}`);
       if (main.innerHTML == 6) {
@@ -462,7 +514,7 @@ appendSlideNews = (dated) => {
     document.getElementById("slideNews").append(card2);
   });
 
-  console.log(totalsum);
+  // console.log(totalsum);
 };
 
 function addToCart(e) {
@@ -472,7 +524,7 @@ function addToCart(e) {
   display(CartAllDetials);
   subto();
   addE();
-  console.log(CartAllDetials);
+  // console.log(CartAllDetials);
 }
 //<!-----------------------------Slide bar in home page----------------------------------------->
 

@@ -1,5 +1,5 @@
 let backDat = JSON.parse(localStorage.getItem("data1"));
-console.log(backDat);
+// console.log(backDat);
 
 let api;
 if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
@@ -10,14 +10,13 @@ if (backDat == "Chicken Curry Cut (Small Pcs) - Large Pack") {
   api = "tempo2";
 } else if (backDat == "Afghani Murgh Seekh Kebab | Ready in 8 Minutes") {
   api = "tempo3";
-}else if(backDat == "Chunky Shawarma Chicken Spread"){
+} else if (backDat == "Chunky Shawarma Chicken Spread") {
   api = "tempo4";
 }
 
 let backDat2 = JSON.parse(localStorage.getItem("itemNo"));
-console.log(backDat2);
+// console.log(backDat2);
 let dishname = JSON.parse(localStorage.getItem("name"));
-
 
 let firstBox = document.getElementById("div1_ptodct");
 let conatiner = document.getElementById("slideShow");
@@ -35,7 +34,10 @@ let getdata = async () => {
 };
 getdata();
 
-let CartAllDetials = JSON.parse(localStorage.getItem('cardArr')) || [];
+let CartAllDetials = JSON.parse(localStorage.getItem("cardArr")) || [];
+
+let title_el = document.querySelector("title");
+if (title_el) title_el.innerHTML = backDat;
 
 appenvalue = (value) => {
   document.getElementById("chickenHead2").innerText = backDat;
@@ -116,7 +118,7 @@ appenvalue = (value) => {
     let price = document.createElement("h3");
     price.innerHTML = " ₹ " + val.price;
     price.setAttribute("id", "div1_weigthlastprice");
-    console.log(val.price);
+    // console.log(val.price);
 
     let CartButton2 = document.createElement("div");
     CartButton2.setAttribute("id", "stylingBtn1");
@@ -139,7 +141,7 @@ appenvalue = (value) => {
       if (center.innerHTML == "Add to cart") {
         center.innerHTML = 0;
         CartAllDetials.push(val);
-        localStorage.setItem('cardArr', JSON.stringify(CartAllDetials));
+        localStorage.setItem("cardArr", JSON.stringify(CartAllDetials));
         // displayDate(cartLic);
         jor.style.display = "inline-block";
         substruct.style.display = "inline-block";
@@ -153,7 +155,7 @@ appenvalue = (value) => {
       totalPrice = substaract * sum2;
       let LOgoOfprice = "₹";
       // console.log(sum2)
-      console.log(totalPrice);
+      // console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
       document
         .getElementById("totalpriceShow")
@@ -170,7 +172,7 @@ appenvalue = (value) => {
       sum2 = val.price;
       totalPrice = number * sum2;
       // console.log(sum2)
-      console.log(totalPrice);
+      // console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
       document.getElementById("totalpriceShow").append(`₹${totalPrice}`);
       if (center.innerHTML == 6) {
@@ -214,8 +216,6 @@ appenvalue = (value) => {
   });
 };
 
-
-
 AppendSlideImage = (data) => {
   // conatiner.innerHTML = null;
 
@@ -224,7 +224,7 @@ AppendSlideImage = (data) => {
     let div = document.createElement("img");
     let x = element.imgUrl;
     for (let i = 0; i <= x.length; i++) {
-      console.log(x[i]);
+      // console.log(x[i]);
       let index = 0;
       let addressoftheimage;
       // conatinerSecond.innerHTML = null
@@ -242,7 +242,7 @@ AppendSlideImage = (data) => {
           conatiner.append(image);
 
           index++;
-        }, 4000);
+        }, 3000);
       };
       slideshowofdetailsofiamge();
     }
@@ -250,11 +250,11 @@ AppendSlideImage = (data) => {
 };
 // -------------------------------------------------------------------------------------------------------------
 
-
-
 // let footePageDiv = ;
 
 appendva = (value) => {
+  let divSidefooter1 = document.getElementById("FloatCart_page");
+  divSidefooter1.innerHTML = null;
   value.forEach((eleme) => {
     let stickeyImageCart = document.createElement("img");
     stickeyImageCart.src = eleme.imgUrl;
@@ -296,7 +296,7 @@ appendva = (value) => {
 
     sticketydiv2.append(stickeybikeLogo, stickeybikecont);
 
-    document.getElementById("FloatCart_page").append(stickeydiv1, sticketydiv2);
+    divSidefooter1.append(stickeydiv1, sticketydiv2);
   });
 };
 //---------------------------------------------------------------------------------------------------------------
@@ -324,7 +324,7 @@ appendSlideNews = (dated) => {
     div.setAttribute("id", "div3_cont");
 
     let img = document.createElement("img");
-    img.setAttribute("src", e.imgUrl);
+    img.setAttribute("src", e.imgUrl[0]);
     img.setAttribute("id", "div_3image");
 
     let name = document.createElement("h4");
@@ -407,7 +407,7 @@ appendSlideNews = (dated) => {
       sum = e.price;
       totalPrice = substaract * sum;
       // console.log(sum2)
-      console.log(totalPrice);
+      // console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
       document.getElementById("totalpriceShow").append(`${totalPrice}`);
       if (main.innerHTML < 1) {
@@ -424,7 +424,7 @@ appendSlideNews = (dated) => {
       sum = e.price;
       totalPrice = number * sum;
       // console.log(sum2)
-      console.log(totalPrice);
+      // console.log(totalPrice);
       document.getElementById("totalpriceShow").innerHTML = null;
       document.getElementById("totalpriceShow").append(`₹${totalPrice}`);
       if (main.innerHTML == 6) {
@@ -466,7 +466,7 @@ function addToCart(e) {
   display(CartAllDetials);
   subto();
   addE();
-  console.log(CartAllDetials);
+  // console.log(CartAllDetials);
 }
 //<!-----------------------------Slide bar in home page----------------------------------------->
 
@@ -572,7 +572,7 @@ scoailmedaiDataappend = (data) => {
     image.src = e.insatphto;
 
     let image_name = document.createElement("h4");
-    image_name.innerHTML = "HiManshU";
+    image_name.innerHTML = "SanTOsh";
 
     let insatalogo = document.createElement("img");
     insatalogo.src = e.insatalogo;
@@ -601,7 +601,7 @@ scoailmedaiDataappend = (data) => {
 // <!------------------------------------------SLIDE---SHOW-------------------------------------------------------------------------------------!>
 
 let slideIndex = 0;
-showSlides();
+// showSlides();
 
 function showSlides() {
   let i;

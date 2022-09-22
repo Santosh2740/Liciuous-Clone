@@ -296,7 +296,7 @@ appendSlideNews = (dated) => {
     div.setAttribute("id", "div3_cont");
 
     let img = document.createElement("img");
-    img.setAttribute("src", e.imgUrl);
+    img.setAttribute("src", e.imgUrl[0]);
     img.setAttribute("id", "div_3image");
 
     let name = document.createElement("h4");
