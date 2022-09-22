@@ -23,5 +23,5 @@ let pressing = async () => {
   localStorage.setItem("searchresult", JSON.stringify(data));
   console.log(query);
   window.location.href =
-    "../../HomePage/searchdata.html";
+    "../../ProductPage/seachPageDetails.html";
 };

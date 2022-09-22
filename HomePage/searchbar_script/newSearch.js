@@ -6,7 +6,10 @@ import footerTal from "../../Components/footer.js";
 
 document.getElementById("footer").innerHTML = footerTal();
 
-// let hightolow = document.getElementById("sort-low-to-high")
+import {filter} from "../../Components/filter.js";
+document.getElementById("filter").innerHTML = filter();
+
+
 
 let searchquery = document.querySelector("#search_bar");
 
@@ -71,7 +74,7 @@ let pressing = async () => {
     localStorage.setItem("desc2", JSON.stringify(desc2));
   }
 
-  window.location.href = "./searchdata.html";
+  window.location.href = "../ProductPage/seachPageDetails.html";
   _eggdata(data);
 };
 
@@ -85,7 +88,7 @@ console.log(data);
 _eggdata(data);
 
 function _eggdata(eggdata) {
-  let box = document.getElementById("searchcontainer");
+  let box = document.getElementById("container");
   box.innerHTML= null;
   eggdata.forEach(elem => {
     var main = document.createElement("div");
@@ -150,9 +153,9 @@ function _eggdata(eggdata) {
     // btndiv.append(addCart)
 
     main.append(img, name, des, wgt, pri);
-    //   document.getElementById(searchcontainer).append(main)
+    //   document.getElementById(container).append(main)
     // main2.innerHTML = null;
-    // let main2 = searchcontainer;
+    // let main2 = container;
 
     box.append(main);
     
@@ -215,5 +218,3 @@ document.getElementById("sort-by-name").onclick = async (e) => {
   // console.log(data);
   _eggdata(data);
 };
-
-

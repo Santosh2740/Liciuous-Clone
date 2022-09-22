@@ -63,7 +63,7 @@ let searchfun = () => {
       localStorage.setItem("desc2", JSON.stringify(desc2));
 
     }
-    window.location.href = "./HomePage/searchdata.html";
+    window.location.href = "./ProductPage/seachPageDetails.html";
   };
 };
 

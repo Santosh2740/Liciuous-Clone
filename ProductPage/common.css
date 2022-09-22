@@ -19,7 +19,8 @@ body {
   /* margin-bottom: 30%; */
 }
 .main {
-  width: 94%;
+  /* width: 94%; */
+  width: 380px;
   height: 460px;
   /* border: 1px solid green; */
   justify-content: space-evenly;

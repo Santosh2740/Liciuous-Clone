@@ -520,7 +520,7 @@ scoailmedaiDataappend = (data) => {
     image.src = e.insatphto;
 
     let image_name = document.createElement("h4");
-    image_name.innerHTML = "HiManshU";
+    image_name.innerHTML = "SanTOsh KuMaR";
 
     let insatalogo = document.createElement("img");
     insatalogo.src = e.insatalogo;

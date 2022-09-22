@@ -334,16 +334,20 @@
 /* ---------------------------------------karishma--- */
 #login {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   gap: 5px;
+  
+}
+.login{
+  margin-left: -19%;
 }
 #logintext {
   border: 0;
   background-color: transparent;
-  margin-top: -15px;
-  margin-bottom: -75px;
+  /* margin-top: -10px; */
+  /* margin-bottom: -75px; */
   font-weight: bolder;
-  font-size: 14px;
+  font-size: 15px;
 }
 #CartPage {
   display: flex;
@@ -351,14 +355,20 @@
   /* margin-top: 330px; */
   position: absolute;
   /* margin-left:-20px; */
-  margin-top: 46px;
-  /* margin-left: 30px; */
+  margin-top: 39px;
+  /* margin-left: -10px; */
+  border: 1px   solid rgb(234, 137, 157);
+  padding: 10px;
+  border-radius: 8px;
+  width: 6.1%;
+  height: 4%;
+  /* margin-right: -200px; */
 }
 
 #MaybePriceadjust {
-  margin-top: 30px;
-  margin-bottom: 47px;
-  margin-left: 30%;
+  margin-top: 60px;
+  margin-bottom: 21px;
+  margin-left: 40%;
   /* margin-right: -20px; */
 }
 #totalpriceShow {
@@ -368,7 +378,11 @@
   /* border-radius: 50%; */
   /* padding: 2; */
   font-weight: 1000;
-  font-size: 15px;
+  font-size: 17px;
+  margin-top: 5px;
+  /* margin-top: 90px; */
+  color: crimson;
+
 }
 #CartImagedeatils {
   display: flex;
