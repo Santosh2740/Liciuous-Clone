@@ -1,3 +1,5 @@
+
+
 var cartamount = JSON.parse(localStorage.getItem("sachindata"));
 // document.querySelector("#totalamount1").innerHTML += cartamount;
 // document.querySelector("#totalamount2").innerHTML += cartamount;

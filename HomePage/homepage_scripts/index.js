@@ -294,6 +294,10 @@ appendSlideNews = (dated) => {
     let card2 = document.createElement("div");
     let div = document.createElement("div");
     div.setAttribute("id", "div3_cont");
+    div.onclick = () =>{
+      localStorage.setItem("data1", JSON.stringify(e.name));
+      window.location.href = "./ProductDetails/Product_pages.html";
+    }
 
     let img = document.createElement("img");
     img.setAttribute("src", e.imgUrl[0]);

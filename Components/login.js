@@ -87,12 +87,12 @@ var promo = document.querySelector("#promo");
 var form = document.querySelector("#apply");
 var checkout = document.querySelector("#dd");
 
-var cartLic = JSON.parse(localStorage.getItem('cardArr')) || [];
+var cartLic = JSON.parse(localStorage.getItem("cardArr")) || [];
 
 function displayDate(data) {
-    var n = cartLic.length;
-    var c = 0;
-    var sum = 0;
+  var n = cartLic.length;
+  var c = 0;
+  var sum = 0;
   data.forEach(function (el, index) {
     var count = 1;
 
@@ -126,16 +126,15 @@ function displayDate(data) {
     remove.innerText = "REMOVE";
     remove.id = "remove";
     remove.addEventListener("click", function () {
-        
       event.target.parentNode.remove();
       data.splice(index, 1);
       sum = sum - Number(el.price);
       n--;
-      total.innerHTML= sum;
-      tItem.innerText = n
+      total.innerHTML = sum;
+      tItem.innerText = n;
       localStorage.setItem("cardArr", JSON.stringify(cartLic));
-      
-    //    window.location.reload();
+
+      //    window.location.reload();
     });
 
     var inc = document.createElement("button");
@@ -189,7 +188,7 @@ let loginsatuebackprocess = localStorage.getItem("loginState");
 
 dd.onclick = function () {
   if (loginsatuebackprocess) {
-    window.location.href = "./NavbarFooter/Pages/paymentPage.html";
+    window.location.href = "../NavbarFooter/Pages/paymentPage.html";
   } else {
     alert("Please Login First");
   }
