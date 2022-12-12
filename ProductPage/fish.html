@@ -59,7 +59,7 @@
 <script>
   let getData = async () => {
     let res = await fetch(
-      "https://safe-eyrie-39519.herokuapp.com/licious/fish"
+      "https://dark-lime-tadpole-sari.cyclic.app/licious/fish"
     );
     let data = await res.json();
     _fish(data);
@@ -67,7 +67,7 @@
   getData();
   let sortLTH = async () => {
   let res = await fetch(
-    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=asc"
+    "https://dark-lime-tadpole-sari.cyclic.app/licious/chicken?_sort=price&_order=asc"
   );
   let data = await res.json();
     console.log(data);
@@ -76,7 +76,7 @@
 };
 let sortHTL = async () => {
   let res = await fetch(
-    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=desc"
+    "https://dark-lime-tadpole-sari.cyclic.app/licious/chicken?_sort=price&_order=desc"
   );
   let data = await res.json();
   console.log(data);
@@ -85,7 +85,7 @@ let sortHTL = async () => {
 };
 let sortNAME = async () => {
   let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/chicken/?_sort=name&_order=asc`
+    `https://dark-lime-tadpole-sari.cyclic.app/licious/chicken/?_sort=name&_order=asc`
   );
   let data = await res.json();
   // console.log(res);

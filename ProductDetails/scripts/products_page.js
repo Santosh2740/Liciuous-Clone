@@ -23,7 +23,7 @@ let conatiner = document.getElementById("slideShow");
 
 let getdata = async () => {
   let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/${api}`
+    `https://dark-lime-tadpole-sari.cyclic.app/licious/${api}`
   );
   let data = await res.json();
   appenvalue(data);
@@ -304,7 +304,7 @@ appendva = (value) => {
 let getSlideData = async () => {
   try {
     let response = await fetch(
-      "https://safe-eyrie-39519.herokuapp.com/licious/bestSeller"
+      "https://dark-lime-tadpole-sari.cyclic.app/licious/bestSeller"
     );
     let users = await response.json();
     appendSlideNews(users);
@@ -502,7 +502,7 @@ sideScroll = (element, direction, speed, distance, step) => {
 
 let LiciousData = async () => {
   let res = await fetch(
-    "https://safe-eyrie-39519.herokuapp.com/licious/TheLicious_way"
+    "https://dark-lime-tadpole-sari.cyclic.app/licious/TheLicious_way"
   );
   let data = await res.json();
   // console.log(data);
@@ -541,7 +541,7 @@ $(document).ready(function () {
 
 let socailmediadata = async () => {
   let res = await fetch(
-    "https://safe-eyrie-39519.herokuapp.com/licious/socailMedia"
+    "https://dark-lime-tadpole-sari.cyclic.app/licious/socailMedia"
   );
   let data = await res.json();
   //   console.log(data);

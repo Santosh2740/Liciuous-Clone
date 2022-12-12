@@ -50,14 +50,14 @@
 </html>
 <script>
   let getData = async () => {
-    let res = await fetch("https://safe-eyrie-39519.herokuapp.com/licious/egg");
+    let res = await fetch("https://dark-lime-tadpole-sari.cyclic.app/licious/egg");
     let data = await res.json();
     _eggdata(data);
   };
   getData();
   let sortLTH = async () => {
   let res = await fetch(
-    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=asc"
+    "https://dark-lime-tadpole-sari.cyclic.app/licious/chicken?_sort=price&_order=asc"
   );
   let data = await res.json();
     console.log(data);
@@ -66,7 +66,7 @@
 };
 let sortHTL = async () => {
   let res = await fetch(
-    "https://safe-eyrie-39519.herokuapp.com/licious/chicken?_sort=price&_order=desc"
+    "https://dark-lime-tadpole-sari.cyclic.app/licious/chicken?_sort=price&_order=desc"
   );
   let data = await res.json();
   console.log(data);
@@ -75,7 +75,7 @@ let sortHTL = async () => {
 };
 let sortNAME = async () => {
   let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/chicken/?_sort=name&_order=asc`
+    `https://dark-lime-tadpole-sari.cyclic.app/licious/chicken/?_sort=name&_order=asc`
   );
   let data = await res.json();
   // console.log(res);

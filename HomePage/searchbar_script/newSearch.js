@@ -23,7 +23,7 @@ let pressing = async () => {
   let query = document.querySelector("#search_bar").value;
   query.toLowerCase();
   let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/${query}`
+    `https://dark-lime-tadpole-sari.cyclic.app/licious/${query}`
   );
   let data = await res.json();
   console.log(data);
@@ -195,7 +195,7 @@ document.getElementById("imaging1").append(backimg2);
 document.getElementById("sort-low-to-high").onclick = async (e) => {
   // alert("click");
   let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/${finalNmae}?_sort=price&_order=desc`
+    `https://dark-lime-tadpole-sari.cyclic.app/licious/${finalNmae}?_sort=price&_order=desc`
   );
   let data = await res.json();
   // console.log(data);
@@ -204,7 +204,7 @@ document.getElementById("sort-low-to-high").onclick = async (e) => {
 document.getElementById("sort-high-to-loW").onclick = async (e) => {
   // alert("click");
   let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/${finalNmae}?_sort=price&_order=asc`
+    `https://dark-lime-tadpole-sari.cyclic.app/licious/${finalNmae}?_sort=price&_order=asc`
   );
   let data = await res.json();
   // console.log(data);
@@ -214,7 +214,7 @@ document.getElementById("sort-high-to-loW").onclick = async (e) => {
 document.getElementById("sort-by-name").onclick = async (e) => {
   // alert("click");
   let res = await fetch(
-    `https://safe-eyrie-39519.herokuapp.com/licious/${finalNmae}?_sort=name&_order=asc`
+    `https://dark-lime-tadpole-sari.cyclic.app/licious/${finalNmae}?_sort=name&_order=asc`
   );
   let data = await res.json();
   // console.log(data);
