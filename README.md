@@ -40,7 +40,7 @@ This is individual Project. Its takes Two weeks with the help of  HTML, CSS , JA
 * All of these functions are working properly.
 ## Screenshot
 
-![App Screenshot]()
+![App Screenshot](https://github.com/Santosh2740/Liciuous-Clone/blob/main/Image/homepage.jpeg)
 
 ### Product Page (Today's Deal) :-
 
@@ -51,7 +51,8 @@ This is individual Project. Its takes Two weeks with the help of  HTML, CSS , JA
 * Clicking on the Add To Cart Button will add products to the cart.
 ## Screenshot
 
-![App Screenshot]()
+![App Screenshot](https://github.com/Santosh2740/Liciuous-Clone/blob/main/Image/Cart%20page.jpeg)
+
 
 
 ### Cart Window :-
@@ -60,9 +61,9 @@ This is individual Project. Its takes Two weeks with the help of  HTML, CSS , JA
 * Here all the products added to the cart will be shown. At the bottom there is total price of the cart and the proceed to Checkout button. Clicking on that button will redirect the user to the Address Page .
 ## Screenshot
 
-![App Screenshot]()
+![App Screenshot](https://github.com/Santosh2740/Liciuous-Clone/blob/main/Image/product%20details.jpeg)
 
-### Address Page :-
+### Product Deatils Page :-
 
 
 * Here the user has to fill in his Location or shipping details and click Proceed to Checkout button. 
@@ -79,15 +80,13 @@ This is individual Project. Its takes Two weeks with the help of  HTML, CSS , JA
 
 ## Screenshot
 
-![App Screenshot]()
+![App Screenshot](https://github.com/Santosh2740/Liciuous-Clone/blob/main/Image/filter%20data.jpeg)
 
-### Payment Successfull :-
+### Filter data  Page :-
 
 
 * After the payment has been done a next page will be appear in which your Dilevery timing, Order ID is mentioned. Clicking on Keep Shopping button will redirect the user to the Landing Page. 
-## Screenshot
 
-![App Screenshot]()
 
 ## Learning :-
 
