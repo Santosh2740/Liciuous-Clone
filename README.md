@@ -19,6 +19,10 @@ This is individual Project. Its takes Two weeks with the help of  HTML, CSS , JA
 - SignUp/Login
 - Landing page with carousels
 - Product pages with sort & filter function
+- Searching product with there names
 - Add to cart func with Add/Remove/Quantity option
 - Payment with applied coupon option
 
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/Deployed_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://liciuous-clone-github-io.vercel.app/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://Santosh2704.github.io/)
